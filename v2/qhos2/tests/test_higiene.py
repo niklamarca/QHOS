@@ -67,6 +67,10 @@ def test_nunca_versionar(raiz, caminho):
     ".env.example",
 ])
 def test_nao_ignorar_o_que_ja_e_versionado(raiz, caminho):
+    if caminho.startswith("vendor/rithmic/") and raiz == PACOTE:
+        # Na copia publica do QHOS os .proto da Rithmic nao sao distribuidos (licenca) e o .gitignore da raiz exclui
+        # vendor/ de proposito. A regra do .gitignore da V2 continua conferida no caso "independente".
+        pytest.skip("copia publica: vendor/rithmic nao e distribuido, o .gitignore da raiz o exclui de proposito")
     assert not _ignorado(raiz, caminho)
 
 

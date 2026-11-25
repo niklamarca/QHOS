@@ -8,7 +8,7 @@ codigo sob teste, para provar a logica; outro teste confere que o pino do roteir
 import importlib.util
 import json
 import sys
-from datetime import date, time
+from datetime import date, datetime, time, timedelta, timezone
 from pathlib import Path
 
 import pytest
@@ -104,7 +104,10 @@ def test_codigo_que_nao_e_o_congelado_para_antes_de_ler(p11, dados, monkeypatch)
 
 
 @linux
-def test_producao_antes_do_fim_da_calibracao_nao_le_nada(p11, dados, capsys):
+def test_producao_antes_do_fim_da_calibracao_nao_le_nada(p11, dados, capsys, monkeypatch):
+    # O fim da janela (6/11/2026) ja passou; sem fixar o relogio este teste passava a falhar sozinho depois dessa data.
+    # Empurra o fim da calibracao para o futuro para continuar provando a regra "antes do fim, nada e lido".
+    monkeypatch.setattr(p11, "FIM_CALIBRACAO_UTC", datetime.now(timezone.utc) + timedelta(days=1))
     raiz, _ = dados
     assert p11.main(["medir", "--dados", str(raiz)]) == 2
     assert "janela de calibracao so fecha" in capsys.readouterr().out and not (raiz / "etapa3_registro").exists()
