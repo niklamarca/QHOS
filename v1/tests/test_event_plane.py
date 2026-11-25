@@ -21,6 +21,13 @@ from core.config import config
 from governance.epistemics import current_data_fingerprint
 
 
+@pytest.fixture(autouse=True)
+def _no_free_disk_reserve(monkeypatch):
+    # The lake refuses to write when free disk is under a 50 GB reserve. These tests write a few KB to tmp_path, so the
+    # reserve only made them depend on the machine they run on (they failed on CI runners and small disks).
+    monkeypatch.setattr(config, "event_plane_min_free_gb", 0.0)
+
+
 def _request() -> EventRequest:
     return EventRequest.create(
         provider="databento",
@@ -298,7 +305,9 @@ class _ShadowProvider:
         self.fetch_calls += 1
         native = Path(output_dir) / "probe.dbn.zst"
         native.write_bytes(b"DBN-shadow-probe")
-        stamp = pd.Timestamp(request.start) + pd.Timedelta(hours=14)
+        # 15:00 UTC is inside the NYSE regular session all year (11:00 EDT, 10:00 EST). The old 14:00 UTC is 09:00 EST,
+        # before the 09:30 open, so this test passed in summer and failed every winter after the DST change.
+        stamp = pd.Timestamp(request.start) + pd.Timedelta(hours=15)
         frame = pd.DataFrame({
             "ts_event": [stamp], "publisher_id": [95], "instrument_id": [1],
             "open": [500_000_000_000], "high": [501_000_000_000],
