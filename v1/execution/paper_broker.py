@@ -50,8 +50,10 @@ class PaperBroker(AbstractBroker):
         self.prices: Dict[str, float] = {}          # symbol → last price
         self.fills: List[Fill] = []
         self.orders: Dict[str, Order] = {}
-        self.slippage_bps = (slippage_bps or config.backtest_slippage_bps) / 10000
-        self.commission_bps = (commission_bps or config.backtest_commission_bps) / 10000
+        # is None (nao 'or'): custo 0 explicito vale 0, como em backtest/engine.py. Com 'or', slippage_bps=0 caia no
+        # default do config e o paper cobrava custo que o chamador tinha zerado.
+        self.slippage_bps = (config.backtest_slippage_bps if slippage_bps is None else slippage_bps) / 10000
+        self.commission_bps = (config.backtest_commission_bps if commission_bps is None else commission_bps) / 10000
         self._pnl_history: List[float] = [0.0]
         self._fills_cum = 0  # contador CUMULATIVO de fills (persiste no restart)
 
