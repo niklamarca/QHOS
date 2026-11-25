@@ -1,0 +1,135 @@
+{
+  "ambiente": "paper",
+  "atualizacoes": {
+    "entradas": 53421,
+    "lados": {
+      "compra": 25973,
+      "venda": 27448
+    },
+    "listas": {
+      "depth_order_priority": {
+        "com": 51923,
+        "sem": 0
+      },
+      "depth_price": {
+        "com": 51923,
+        "sem": 0
+      },
+      "depth_size": {
+        "com": 51923,
+        "sem": 0
+      },
+      "exchange_order_id": {
+        "com": 51923,
+        "sem": 0
+      },
+      "transaction_type": {
+        "com": 51923,
+        "sem": 0
+      },
+      "update_type": {
+        "com": 51923,
+        "sem": 0
+      }
+    },
+    "maior_quadro": 34,
+    "por_quadro": {
+      "1": 51403,
+      "2-5": 435,
+      "6+": 85
+    },
+    "preenchidos": {
+      "depth_order_priority": 53421,
+      "exchange_order_id": 53421,
+      "prev_depth_price": 53421
+    },
+    "quadros_desalinhados": 0,
+    "tipos": {
+      "CHANGE": 6633,
+      "DELETE": 23273,
+      "NEW": 23515
+    }
+  },
+  "bolsa": "CME",
+  "captura_id": "8aa43f0abe9647a29354c81058157652",
+  "ciclo": {
+    "depois_do_retrato": {
+      "alteracao": 6633,
+      "alteracao_mantem_prioridade": 695,
+      "alteracao_muda_preco": 5893,
+      "alteracao_muda_prioridade": 5938,
+      "novo": 23515,
+      "remocao": 23273
+    },
+    "durante_retrato": {}
+  },
+  "com_carimbo": {
+    "150": 4142,
+    "160": 51923
+  },
+  "esquema": "qhos2.inspecao.v1",
+  "invalidos": {},
+  "negocios": {
+    "agressor": {
+      "ausente": 1360,
+      "compra": 1351,
+      "venda": 1431
+    },
+    "agressor_visto": 111,
+    "agressor_vivo": 111,
+    "id_agressor": 2781,
+    "id_passivo": 2781,
+    "passivo_visto": 2781,
+    "passivo_vivo": 2781,
+    "quadros": 4142,
+    "retrato": 1,
+    "sem_preco": 1360
+  },
+  "ordens_vivas_no_fim": 8825,
+  "quadros": {
+    "116": 1303,
+    "150": 4142,
+    "160": 51923
+  },
+  "retrato": {
+    "apos_o_fim": 0,
+    "fim_visto": true,
+    "ids_duplicados": 0,
+    "ids_vazios": 0,
+    "lados": {
+      "compra": 569,
+      "venda": 733
+    },
+    "niveis": 1302,
+    "ordens": 8583,
+    "recusado": false
+  },
+  "sequencia": {
+    "116": {
+      "com": 0,
+      "passos": {},
+      "sem": 1303
+    },
+    "150": {
+      "com": 0,
+      "passos": {},
+      "sem": 4142
+    },
+    "160": {
+      "com": 0,
+      "passos": {},
+      "sem": 51923
+    },
+    "161": {
+      "com": 0,
+      "passos": {},
+      "sem": 0
+    },
+    "mercado": {
+      "com": 0,
+      "passos": {},
+      "sem": 51923
+    }
+  },
+  "simbolo": "ESZ6"
+}

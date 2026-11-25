@@ -1,0 +1,27 @@
+{
+  "repository": "https://github.com/asgeirtj/system_prompts_leaks",
+  "analysis_timestamp": "2026-09-02T21:30:00-03:00",
+  "auto_sync": false,
+  "sources": {
+    "FABLE5": {
+      "path": "Anthropic/claude-fable-5.md",
+      "commit": "14d6a800db37e046739a8483528e8d57fb33b914",
+      "role": "primary"
+    },
+    "FABLE5_1": {
+      "path": "Anthropic/claude-fable-5.1.md",
+      "commit": "0f4aeb3e7d04419c7161dd25fbd2dab23341867c",
+      "role": "secondary"
+    },
+    "CODE_FABLE5": {
+      "path": "Anthropic/claude-code/claude-code-fable-5.md",
+      "commit": "a7d0a2699d41954ced817957ef96ad0eb7f89ea9",
+      "role": "secondary"
+    },
+    "CODE_FABLE5_1": {
+      "path": "Anthropic/claude-code/claude-code-fable-5.1.md",
+      "commit": "de981be0c43858266491ace7fcafce371c9de7b8",
+      "role": "secondary"
+    }
+  }
+}

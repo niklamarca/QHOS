@@ -1,0 +1,5 @@
+quadros carregados: 1500000 bytes_protobuf=213473778
+gravador sozinho: quadros=1500000 segundos=9.2 quadros_por_s=163405 por_quadro_ms p50=0.003 p99=0.020 max=10.8 acima_de_10ms=1
+decodificar + gravador (caminho da sessao): quadros=1500000 segundos=25.2 quadros_por_s=59440 por_quadro_ms p50=0.012 p99=0.057 max=6.2 acima_de_10ms=0
+decodificar sozinho: quadros=1500000 segundos=14.6 quadros_por_s=102922 por_quadro_ms p50=0.009 p99=0.028 max=1.1 acima_de_10ms=0
+raiz temporaria apagada: /home/usuario/teto-local-tmp

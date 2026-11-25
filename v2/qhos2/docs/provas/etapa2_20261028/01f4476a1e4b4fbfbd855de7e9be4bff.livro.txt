@@ -1,0 +1,5 @@
+captura=01f4476a1e4b4fbfbd855de7e9be4bff fase=PRONTO qualificado=False suspeito=True cruzado=True
+  eventos=7651367 negocios=766850 ordens=12858 niveis={'C': 723, 'V': 536} spread_ticks=-9
+  anomalias={'altera_desconhecida': 487, 'cruzado': 935587, 'cruzado_dentro_do_quadro': 98263, 'durante_retrato_altera_desconhecida': 1, 'durante_retrato_novo_ja_vivo': 30, 'durante_retrato_remove_desconhecida': 36, 'negocio_com_passiva_fora_do_livro': 587, 'novo_ja_vivo': 7821, 'remove_desconhecida': 2025}
+  reaplicadas={'aplicadas': 270, 'defasadas': 0, 'fantasmas': 0}
+  assinatura=2261faca3c5d882b

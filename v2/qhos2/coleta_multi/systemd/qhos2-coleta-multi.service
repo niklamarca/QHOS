@@ -1,0 +1,36 @@
+[Unit]
+Description=QHOS V2 coletor multi-ativo do Quote Board e fechamento no DataSet (sobe no boot)
+After=network-online.target qhos2-agenda.service
+Wants=network-online.target
+ConditionPathExists=%h/.config/qhos2/rithmic-paper.cred
+StartLimitIntervalSec=3600
+StartLimitBurst=3
+
+[Service]
+Type=simple
+WorkingDirectory=%h/qhos-coleta/qhos2
+Environment=QHOS2_DATA_ROOT=%h/qhos-v2-data
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=PYTHONPATH=%h/qhos-coleta/qhos2/src:%h/qhos-coleta/qhos2
+LoadCredential=rithmic-paper:%h/.config/qhos2/rithmic-paper.cred
+ExecStart=%h/qhos-coleta-venv/bin/python -m coleta_multi.servico coletor-continuo
+Restart=always
+RestartSec=120
+RestartPreventExitStatus=2 3
+KillMode=mixed
+TimeoutStopSec=90
+# O ES tem prioridade de CPU e disco.
+Nice=10
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=%h/qhos-v2-data/coleta_multi %h/.local/state/qhos2/coleta_multi /mnt/c/Users/usuario/OneDrive/Desktop/DataSet
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+
+[Install]
+WantedBy=default.target

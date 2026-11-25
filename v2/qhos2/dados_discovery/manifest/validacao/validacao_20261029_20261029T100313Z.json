@@ -1,0 +1,1874 @@
+{
+ "esquema": "qhos_dados.validacao.v1",
+ "dia": "20261029",
+ "utc_inicio": "2026-10-29T10:03:13Z",
+ "utc_fim": "2026-10-29T10:04:20Z",
+ "sha256_validador": "4ab6ae5da3966559f139adddb4f53c16e7427321a254db568de3f39d41e331bc",
+ "datasets": [
+  {
+   "dataset_id": "INTEGRIDADE",
+   "descricao": "SHA-256 de cada arquivo em RAW contra MANIFEST/aquisicoes.jsonl",
+   "arquivos": 6876,
+   "bytes": 1651723008,
+   "linhas": 0,
+   "periodo": null,
+   "checagens": {
+    "sha256": {
+     "conferidos": 6876,
+     "no_manifesto": 6876,
+     "diferentes": 0,
+     "sem_registro": 0,
+     "registrados_e_ausentes": 0
+    }
+   },
+   "achados": [],
+   "nao_validado": [],
+   "veredito": "sem achados"
+  },
+  {
+   "dataset_id": "B01_CBOE_VOL_IDX",
+   "descricao": "indices de volatilidade Cboe (CSV diario)",
+   "arquivos": 8,
+   "bytes": 1631063,
+   "linhas": 45319,
+   "periodo": [
+    "1990-01-02",
+    "2026-10-28"
+   ],
+   "checagens": {
+    "GVZ": {
+     "n": 4302,
+     "unicas": 4302,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "2009-09-18",
+     "fim": "2026-10-28",
+     "fim_de_semana": 0,
+     "passo_mediano_dias": 1,
+     "maior_buraco_dias": 5,
+     "maior_buraco_apos": "2012-10-26",
+     "dias_uteis_sem_dado": 162,
+     "dias_uteis_sem_dado_exemplos": [
+      "2026-01-01",
+      "2026-01-19",
+      "2026-02-16",
+      "2026-04-03",
+      "2026-05-25",
+      "2026-06-19",
+      "2026-07-03",
+      "2026-09-07"
+     ],
+     "colunas": [
+      "DATE",
+      "GVZ"
+     ]
+    },
+    "OVX": {
+     "n": 4302,
+     "unicas": 4302,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "2009-09-18",
+     "fim": "2026-10-28",
+     "fim_de_semana": 0,
+     "passo_mediano_dias": 1,
+     "maior_buraco_dias": 5,
+     "maior_buraco_apos": "2012-10-26",
+     "dias_uteis_sem_dado": 162,
+     "dias_uteis_sem_dado_exemplos": [
+      "2026-01-01",
+      "2026-01-19",
+      "2026-02-16",
+      "2026-04-03",
+      "2026-05-25",
+      "2026-06-19",
+      "2026-07-03",
+      "2026-09-07"
+     ],
+     "colunas": [
+      "DATE",
+      "OVX"
+     ]
+    },
+    "SKEW": {
+     "n": 9258,
+     "unicas": 9258,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "1990-01-02",
+     "fim": "2026-10-28",
+     "fim_de_semana": 0,
+     "passo_mediano_dias": 1,
+     "maior_buraco_dias": 13,
+     "maior_buraco_apos": "2000-09-19",
+     "dias_uteis_sem_dado": 349,
+     "dias_uteis_sem_dado_exemplos": [
+      "2026-01-01",
+      "2026-01-19",
+      "2026-02-16",
+      "2026-04-03",
+      "2026-05-25",
+      "2026-06-19",
+      "2026-07-03",
+      "2026-09-07"
+     ],
+     "colunas": [
+      "DATE",
+      "SKEW"
+     ]
+    },
+    "VIX3M": {
+     "n": 4304,
+     "unicas": 4304,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "2009-09-18",
+     "fim": "2026-10-28",
+     "fim_de_semana": 0,
+     "passo_mediano_dias": 1,
+     "maior_buraco_dias": 5,
+     "maior_buraco_apos": "2012-10-26",
+     "dias_uteis_sem_dado": 160,
+     "dias_uteis_sem_dado_exemplos": [
+      "2026-01-01",
+      "2026-01-19",
+      "2026-02-16",
+      "2026-04-03",
+      "2026-05-25",
+      "2026-06-19",
+      "2026-07-03",
+      "2026-09-07"
+     ],
+     "colunas": [
+      "DATE",
+      "OPEN",
+      "HIGH",
+      "LOW",
+      "CLOSE"
+     ],
+     "ohlc_planos": 0
+    },
+    "VIX6M": {
+     "n": 4736,
+     "unicas": 4736,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "2008-01-02",
+     "fim": "2026-10-28",
+     "fim_de_semana": 0,
+     "passo_mediano_dias": 1,
+     "maior_buraco_dias": 5,
+     "maior_buraco_apos": "2012-10-26",
+     "dias_uteis_sem_dado": 175,
+     "dias_uteis_sem_dado_exemplos": [
+      "2026-01-01",
+      "2026-01-19",
+      "2026-02-16",
+      "2026-04-03",
+      "2026-05-25",
+      "2026-06-19",
+      "2026-07-03",
+      "2026-09-07"
+     ],
+     "colunas": [
+      "DATE",
+      "OPEN",
+      "HIGH",
+      "LOW",
+      "CLOSE"
+     ],
+     "ohlc_planos": 1488
+    },
+    "VIX9D": {
+     "n": 3978,
+     "unicas": 3978,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "2011-01-04",
+     "fim": "2026-10-28",
+     "fim_de_semana": 0,
+     "passo_mediano_dias": 1,
+     "maior_buraco_dias": 5,
+     "maior_buraco_apos": "2012-10-26",
+     "dias_uteis_sem_dado": 149,
+     "dias_uteis_sem_dado_exemplos": [
+      "2026-01-01",
+      "2026-01-19",
+      "2026-02-16",
+      "2026-04-03",
+      "2026-05-25",
+      "2026-06-19",
+      "2026-07-03",
+      "2026-09-07"
+     ],
+     "colunas": [
+      "DATE",
+      "OPEN",
+      "HIGH",
+      "LOW",
+      "CLOSE"
+     ],
+     "ohlc_planos": 722
+    },
+    "VIX": {
+     "n": 9304,
+     "unicas": 9304,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "1990-01-02",
+     "fim": "2026-10-28",
+     "fim_de_semana": 0,
+     "passo_mediano_dias": 1,
+     "maior_buraco_dias": 7,
+     "maior_buraco_apos": "2001-09-10",
+     "dias_uteis_sem_dado": 303,
+     "dias_uteis_sem_dado_exemplos": [
+      "2024-01-01",
+      "2024-03-29",
+      "2024-12-25",
+      "2025-01-01",
+      "2025-04-18",
+      "2025-12-25",
+      "2026-01-01",
+      "2026-04-03"
+     ],
+     "colunas": [
+      "DATE",
+      "OPEN",
+      "HIGH",
+      "LOW",
+      "CLOSE"
+     ],
+     "ohlc_planos": 506
+    },
+    "VVIX": {
+     "n": 5135,
+     "unicas": 5135,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "2006-03-06",
+     "fim": "2026-10-28",
+     "fim_de_semana": 0,
+     "passo_mediano_dias": 1.0,
+     "maior_buraco_dias": 21,
+     "maior_buraco_apos": "2006-03-21",
+     "dias_uteis_sem_dado": 253,
+     "dias_uteis_sem_dado_exemplos": [
+      "2026-01-01",
+      "2026-01-19",
+      "2026-02-16",
+      "2026-04-03",
+      "2026-05-25",
+      "2026-06-19",
+      "2026-07-03",
+      "2026-09-07"
+     ],
+     "colunas": [
+      "DATE",
+      "VVIX"
+     ]
+    }
+   },
+   "achados": [
+    {
+     "etiqueta": "OBSERVED",
+     "texto": "VIX6M: OHLC inconsistente (low>min(open,close) ou high<max(open,close))",
+     "n": 1,
+     "exemplos": [
+      "2019-07-05"
+     ]
+    },
+    {
+     "etiqueta": "CALCULATED",
+     "texto": "VIX6M: 1488 dias com OHLC plano (O=H=L=C), tipico de serie so de fechamento",
+     "n": 1488
+    },
+    {
+     "etiqueta": "CALCULATED",
+     "texto": "VIX9D: 722 dias com OHLC plano (O=H=L=C), tipico de serie so de fechamento",
+     "n": 722
+    },
+    {
+     "etiqueta": "OBSERVED",
+     "texto": "VIX: OHLC inconsistente (low>min(open,close) ou high<max(open,close))",
+     "n": 47,
+     "exemplos": [
+      "1992-02-11",
+      "1992-02-19",
+      "1992-08-24",
+      "1992-08-27",
+      "1992-09-16",
+      "1992-10-09",
+      "1992-11-09",
+      "1992-11-20"
+     ]
+    },
+    {
+     "etiqueta": "CALCULATED",
+     "texto": "VIX: 506 dias com OHLC plano (O=H=L=C), tipico de serie so de fechamento",
+     "n": 506
+    }
+   ],
+   "nao_validado": [],
+   "veredito": "com achados"
+  },
+  {
+   "dataset_id": "E01_UST_CURVE",
+   "descricao": "curvas diarias do Treasury (um CSV por tipo e ano)",
+   "arquivos": 140,
+   "bytes": 1414365,
+   "linhas": 34802,
+   "periodo": [
+    "1990-01-02",
+    "2026-10-28"
+   ],
+   "checagens": {
+    "daily_treasury_bill_rates": {
+     "n": 6211,
+     "unicas": 6211,
+     "duplicadas": 0,
+     "fora_de_ordem": 6186,
+     "inicio": "2002-01-02",
+     "fim": "2026-10-28",
+     "fim_de_semana": 0,
+     "passo_mediano_dias": 1.0,
+     "maior_buraco_dias": 4,
+     "maior_buraco_apos": "2002-01-18",
+     "dias_uteis_sem_dado": 265,
+     "dias_uteis_sem_dado_exemplos": [
+      "2026-01-01",
+      "2026-01-19",
+      "2026-02-16",
+      "2026-05-25",
+      "2026-06-19",
+      "2026-07-03",
+      "2026-09-07",
+      "2026-10-12"
+     ],
+     "celulas_vazias_pct_por_coluna": {
+      "4 WEEKS BANK DISCOUNT": 0.03,
+      "4 WEEKS COUPON EQUIVALENT": 0.03,
+      "13 WEEKS BANK DISCOUNT": 0.02,
+      "13 WEEKS COUPON EQUIVALENT": 0.02,
+      "26 WEEKS BANK DISCOUNT": 0.02,
+      "26 WEEKS COUPON EQUIVALENT": 0.02,
+      "52 WEEKS BANK DISCOUNT": 7.08,
+      "52 WEEKS COUPON EQUIVALENT": 7.08,
+      "8 WEEKS BANK DISCOUNT": 8.98,
+      "8 WEEKS COUPON EQUIVALENT": 8.98,
+      "17 WEEKS BANK DISCOUNT": 16.51,
+      "17 WEEKS COUPON EQUIVALENT": 16.51,
+      "6 WEEKS BANK DISCOUNT": 6.8,
+      "6 WEEKS COUPON EQUIVALENT": 6.8
+     }
+    },
+    "daily_treasury_long_term_rate": {
+     "n": 6709,
+     "unicas": 6709,
+     "duplicadas": 0,
+     "fora_de_ordem": 6682,
+     "inicio": "2000-01-03",
+     "fim": "2026-10-28",
+     "fim_de_semana": 0,
+     "passo_mediano_dias": 1.0,
+     "maior_buraco_dias": 4,
+     "maior_buraco_apos": "2000-01-14",
+     "dias_uteis_sem_dado": 289,
+     "dias_uteis_sem_dado_exemplos": [
+      "2026-01-01",
+      "2026-01-19",
+      "2026-02-16",
+      "2026-05-25",
+      "2026-06-19",
+      "2026-07-03",
+      "2026-09-07",
+      "2026-10-12"
+     ],
+     "celulas_vazias_pct_por_coluna": {
+      "Extrapolation Factor": 20.48
+     }
+    },
+    "daily_treasury_real_long_term": {
+     "n": 6709,
+     "unicas": 6709,
+     "duplicadas": 0,
+     "fora_de_ordem": 6682,
+     "inicio": "2000-01-03",
+     "fim": "2026-10-28",
+     "fim_de_semana": 0,
+     "passo_mediano_dias": 1.0,
+     "maior_buraco_dias": 4,
+     "maior_buraco_apos": "2000-01-14",
+     "dias_uteis_sem_dado": 289,
+     "dias_uteis_sem_dado_exemplos": [
+      "2026-01-01",
+      "2026-01-19",
+      "2026-02-16",
+      "2026-05-25",
+      "2026-06-19",
+      "2026-07-03",
+      "2026-09-07",
+      "2026-10-12"
+     ],
+     "celulas_vazias_pct_por_coluna": {}
+    },
+    "daily_treasury_real_yield_curve": {
+     "n": 5960,
+     "unicas": 5960,
+     "duplicadas": 0,
+     "fora_de_ordem": 5936,
+     "inicio": "2003-01-02",
+     "fim": "2026-10-28",
+     "fim_de_semana": 0,
+     "passo_mediano_dias": 1,
+     "maior_buraco_dias": 4,
+     "maior_buraco_apos": "2003-01-17",
+     "dias_uteis_sem_dado": 255,
+     "dias_uteis_sem_dado_exemplos": [
+      "2026-01-01",
+      "2026-01-19",
+      "2026-02-16",
+      "2026-05-25",
+      "2026-06-19",
+      "2026-07-03",
+      "2026-09-07",
+      "2026-10-12"
+     ],
+     "celulas_vazias_pct_por_coluna": {
+      "20 YR": 2.47,
+      "30 YR": 0.78
+     }
+    },
+    "daily_treasury_yield_curve": {
+     "n": 9213,
+     "unicas": 9213,
+     "duplicadas": 0,
+     "fora_de_ordem": 9176,
+     "inicio": "1990-01-02",
+     "fim": "2026-10-28",
+     "fim_de_semana": 0,
+     "passo_mediano_dias": 1.0,
+     "maior_buraco_dias": 4,
+     "maior_buraco_apos": "1990-01-12",
+     "dias_uteis_sem_dado": 394,
+     "dias_uteis_sem_dado_exemplos": [
+      "2026-01-01",
+      "2026-01-19",
+      "2026-02-16",
+      "2026-05-25",
+      "2026-06-19",
+      "2026-07-03",
+      "2026-09-07",
+      "2026-10-12"
+     ],
+     "celulas_vazias_pct_por_coluna": {
+      "3 Mo": 0.04,
+      "6 Mo": 0.01,
+      "1 Yr": 0.01,
+      "2 Yr": 0.01,
+      "3 Yr": 0.01,
+      "5 Yr": 0.01,
+      "7 Yr": 0.01,
+      "10 Yr": 0.01,
+      "30 Yr": 2.89,
+      "20 Yr": 2.23,
+      "1 Mo": 2.26,
+      "2 Mo": 8.98,
+      "4 Mo": 16.51,
+      "1.5 Month": 6.8
+     }
+    }
+   },
+   "achados": [],
+   "nao_validado": [],
+   "veredito": "sem achados"
+  },
+  {
+   "dataset_id": "E03_GSW_NOMINAL",
+   "descricao": "curva nominal Gurkaynak-Sack-Wright",
+   "arquivos": 1,
+   "bytes": 16664803,
+   "linhas": 17053,
+   "periodo": [
+    "1961-06-14",
+    "2026-10-23"
+   ],
+   "checagens": {
+    "feds200628": {
+     "n": 17053,
+     "unicas": 17053,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "1961-06-14",
+     "fim": "2026-10-23",
+     "fim_de_semana": 0,
+     "passo_mediano_dias": 1.0,
+     "maior_buraco_dias": 3,
+     "maior_buraco_apos": "1961-06-16",
+     "dias_uteis_sem_dado": 0,
+     "dias_uteis_sem_dado_exemplos": [],
+     "linhas_de_nota_antes_do_cabecalho": 9,
+     "colunas": 100,
+     "colunas_com_NA": 99,
+     "NA_pct_maior": 40.1
+    }
+   },
+   "achados": [
+    {
+     "etiqueta": "OBSERVED",
+     "texto": "arquivo comeca com nota 'not an official Federal Reserve statistical release'"
+    }
+   ],
+   "nao_validado": [],
+   "veredito": "com achados"
+  },
+  {
+   "dataset_id": "E04_GSW_TIPS",
+   "descricao": "curva real (TIPS) Gurkaynak-Sack-Wright",
+   "arquivos": 1,
+   "bytes": 15162738,
+   "linhas": 7255,
+   "periodo": [
+    "1999-01-04",
+    "2026-10-23"
+   ],
+   "checagens": {
+    "feds200805": {
+     "n": 7255,
+     "unicas": 7255,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "1999-01-04",
+     "fim": "2026-10-23",
+     "fim_de_semana": 0,
+     "passo_mediano_dias": 1.0,
+     "maior_buraco_dias": 3,
+     "maior_buraco_apos": "1999-01-08",
+     "dias_uteis_sem_dado": 0,
+     "dias_uteis_sem_dado_exemplos": [],
+     "linhas_de_nota_antes_do_cabecalho": 18,
+     "colunas": 127,
+     "colunas_com_NA": 126,
+     "NA_pct_maior": 21.4
+    }
+   },
+   "achados": [
+    {
+     "etiqueta": "OBSERVED",
+     "texto": "arquivo comeca com nota 'not an official Federal Reserve statistical release'"
+    }
+   ],
+   "nao_validado": [],
+   "veredito": "com achados"
+  },
+  {
+   "dataset_id": "D06_FOMC_CAL",
+   "descricao": "paginas HTML do calendario do FOMC",
+   "arquivos": 3,
+   "bytes": 356511,
+   "linhas": 0,
+   "periodo": null,
+   "checagens": {},
+   "achados": [],
+   "nao_validado": [
+    "fomc_historical.htm: HTML; a extracao das datas de reuniao e peca propria",
+    "fomc_historical_year.htm: HTML; a extracao das datas de reuniao e peca propria",
+    "fomccalendars.htm: HTML; a extracao das datas de reuniao e peca propria"
+   ],
+   "veredito": "nao validado"
+  },
+  {
+   "dataset_id": "F01_CFTC_COT_FILES",
+   "descricao": "COT da CFTC: legado, desagregado e financeiro (ZIP com TXT)",
+   "arquivos": 33,
+   "bytes": 84137202,
+   "linhas": 524731,
+   "periodo": [
+    "1986-01-15",
+    "2026-10-20"
+   ],
+   "checagens": {
+    "legado": {
+     "arquivos": {
+      "deacot1986_2016.zip": {
+       "membros": [
+        "FUT86_16.txt"
+       ],
+       "linhas": 146677,
+       "inicio": "1986-01-15",
+       "fim": "2016-12-27"
+      },
+      "deacot2017.zip": {
+       "membros": [
+        "annual.txt"
+       ],
+       "linhas": 12314,
+       "inicio": "2017-01-03",
+       "fim": "2017-12-26"
+      },
+      "deacot2018.zip": {
+       "membros": [
+        "annual.txt"
+       ],
+       "linhas": 13410,
+       "inicio": "2018-01-02",
+       "fim": "2018-12-31"
+      },
+      "deacot2019.zip": {
+       "membros": [
+        "annual.txt"
+       ],
+       "linhas": 13468,
+       "inicio": "2019-01-08",
+       "fim": "2019-12-31"
+      },
+      "deacot2020.zip": {
+       "membros": [
+        "annual.txt"
+       ],
+       "linhas": 13131,
+       "inicio": "2020-01-07",
+       "fim": "2020-12-29"
+      },
+      "deacot2021.zip": {
+       "membros": [
+        "annual.txt"
+       ],
+       "linhas": 13307,
+       "inicio": "2021-01-05",
+       "fim": "2021-12-28"
+      },
+      "deacot2022.zip": {
+       "membros": [
+        "annual.txt"
+       ],
+       "linhas": 14245,
+       "inicio": "2022-01-04",
+       "fim": "2022-12-27"
+      },
+      "deacot2023.zip": {
+       "membros": [
+        "annual.txt"
+       ],
+       "linhas": 15343,
+       "inicio": "2023-01-03",
+       "fim": "2023-12-26"
+      },
+      "deacot2024.zip": {
+       "membros": [
+        "annual.txt"
+       ],
+       "linhas": 16764,
+       "inicio": "2024-01-02",
+       "fim": "2024-12-31"
+      },
+      "deacot2025.zip": {
+       "membros": [
+        "annual.txt"
+       ],
+       "linhas": 17316,
+       "inicio": "2025-01-07",
+       "fim": "2025-12-30"
+      },
+      "deacot2026.zip": {
+       "membros": [
+        "annual.txt"
+       ],
+       "linhas": 15171,
+       "inicio": "2026-01-06",
+       "fim": "2026-10-20"
+      }
+     },
+     "linhas": 291146,
+     "datas_de_referencia": 1941,
+     "inicio": "1986-01-15",
+     "fim": "2026-10-20",
+     "passo_mediano_dias": 7.0,
+     "dia_da_semana": {
+      "seg": 3980,
+      "ter": 280475,
+      "qua": 1462,
+      "qui": 1299,
+      "sex": 3930
+     },
+     "chaves_mercado_data_repetidas": 0
+    },
+    "desagregado": {
+     "arquivos": {
+      "fut_disagg_txt_2017.zip": {
+       "membros": [
+        "f_year.txt"
+       ],
+       "linhas": 10204,
+       "inicio": "2017-01-03",
+       "fim": "2017-12-26"
+      },
+      "fut_disagg_txt_2018.zip": {
+       "membros": [
+        "f_year.txt"
+       ],
+       "linhas": 10874,
+       "inicio": "2018-01-02",
+       "fim": "2018-12-31"
+      },
+      "fut_disagg_txt_2019.zip": {
+       "membros": [
+        "f_year.txt"
+       ],
+       "linhas": 10954,
+       "inicio": "2019-01-08",
+       "fim": "2019-12-31"
+      },
+      "fut_disagg_txt_2020.zip": {
+       "membros": [
+        "f_year.txt"
+       ],
+       "linhas": 10786,
+       "inicio": "2020-01-07",
+       "fim": "2020-12-29"
+      },
+      "fut_disagg_txt_2021.zip": {
+       "membros": [
+        "f_year.txt"
+       ],
+       "linhas": 10704,
+       "inicio": "2021-01-05",
+       "fim": "2021-12-28"
+      },
+      "fut_disagg_txt_2022.zip": {
+       "membros": [
+        "f_year.txt"
+       ],
+       "linhas": 11526,
+       "inicio": "2022-01-04",
+       "fim": "2022-12-27"
+      },
+      "fut_disagg_txt_2023.zip": {
+       "membros": [
+        "f_year.txt"
+       ],
+       "linhas": 12534,
+       "inicio": "2023-01-03",
+       "fim": "2023-12-26"
+      },
+      "fut_disagg_txt_2024.zip": {
+       "membros": [
+        "f_year.txt"
+       ],
+       "linhas": 13601,
+       "inicio": "2024-01-02",
+       "fim": "2024-12-31"
+      },
+      "fut_disagg_txt_2025.zip": {
+       "membros": [
+        "f_year.txt"
+       ],
+       "linhas": 13630,
+       "inicio": "2025-01-07",
+       "fim": "2025-12-30"
+      },
+      "fut_disagg_txt_2026.zip": {
+       "membros": [
+        "f_year.txt"
+       ],
+       "linhas": 11447,
+       "inicio": "2026-01-06",
+       "fim": "2026-10-20"
+      },
+      "fut_disagg_txt_hist_2006_2016.zip": {
+       "membros": [
+        "F_Disagg06_16.txt"
+       ],
+       "linhas": 70199,
+       "inicio": "2006-06-13",
+       "fim": "2016-12-27"
+      }
+     },
+     "linhas": 186459,
+     "datas_de_referencia": 1063,
+     "inicio": "2006-06-13",
+     "fim": "2026-10-20",
+     "passo_mediano_dias": 7.0,
+     "dia_da_semana": {
+      "seg": 1953,
+      "ter": 184447,
+      "qua": 59
+     },
+     "chaves_mercado_data_repetidas": 0
+    },
+    "financeiro": {
+     "arquivos": {
+      "fin_fut_txt_2006_2016.zip": {
+       "membros": [
+        "F_TFF_2006_2016.txt"
+       ],
+       "linhas": 18911,
+       "inicio": "2006-06-13",
+       "fim": "2016-12-27"
+      },
+      "fut_fin_txt_2017.zip": {
+       "membros": [
+        "FinFutYY.txt"
+       ],
+       "linhas": 2110,
+       "inicio": "2017-01-03",
+       "fim": "2017-12-26"
+      },
+      "fut_fin_txt_2018.zip": {
+       "membros": [
+        "FinFutYY.txt"
+       ],
+       "linhas": 2538,
+       "inicio": "2018-01-02",
+       "fim": "2018-12-31"
+      },
+      "fut_fin_txt_2019.zip": {
+       "membros": [
+        "FinFutYY.txt"
+       ],
+       "linhas": 2518,
+       "inicio": "2019-01-08",
+       "fim": "2019-12-31"
+      },
+      "fut_fin_txt_2020.zip": {
+       "membros": [
+        "FinFutYY.txt"
+       ],
+       "linhas": 2345,
+       "inicio": "2020-01-07",
+       "fim": "2020-12-29"
+      },
+      "fut_fin_txt_2021.zip": {
+       "membros": [
+        "FinFutYY.txt"
+       ],
+       "linhas": 2603,
+       "inicio": "2021-01-05",
+       "fim": "2021-12-28"
+      },
+      "fut_fin_txt_2022.zip": {
+       "membros": [
+        "FinFutYY.txt"
+       ],
+       "linhas": 2719,
+       "inicio": "2022-01-04",
+       "fim": "2022-12-27"
+      },
+      "fut_fin_txt_2023.zip": {
+       "membros": [
+        "FinFutYY.txt"
+       ],
+       "linhas": 2809,
+       "inicio": "2023-01-03",
+       "fim": "2023-12-26"
+      },
+      "fut_fin_txt_2024.zip": {
+       "membros": [
+        "FinFutYY.txt"
+       ],
+       "linhas": 3163,
+       "inicio": "2024-01-02",
+       "fim": "2024-12-31"
+      },
+      "fut_fin_txt_2025.zip": {
+       "membros": [
+        "FinFutYY.txt"
+       ],
+       "linhas": 3686,
+       "inicio": "2025-01-07",
+       "fim": "2025-12-30"
+      },
+      "fut_fin_txt_2026.zip": {
+       "membros": [
+        "FinFutYY.txt"
+       ],
+       "linhas": 3724,
+       "inicio": "2026-01-06",
+       "fim": "2026-10-20"
+      }
+     },
+     "linhas": 47126,
+     "datas_de_referencia": 1063,
+     "inicio": "2006-06-13",
+     "fim": "2026-10-20",
+     "passo_mediano_dias": 7.0,
+     "dia_da_semana": {
+      "seg": 531,
+      "ter": 46562,
+      "qua": 33
+     },
+     "chaves_mercado_data_repetidas": 0
+    }
+   },
+   "achados": [
+    {
+     "etiqueta": "CALCULATED",
+     "texto": "legado: intervalos > 7 dias entre datas de referencia",
+     "n": 179,
+     "exemplos": [
+      "1986-01-15->1986-01-31 (16 d)",
+      "1986-01-31->1986-02-14 (14 d)",
+      "1986-02-14->1986-02-28 (14 d)",
+      "1986-02-28->1986-03-14 (14 d)",
+      "1986-03-14->1986-03-31 (17 d)",
+      "1986-03-31->1986-04-15 (15 d)",
+      "1986-04-15->1986-04-30 (15 d)",
+      "1986-04-30->1986-05-15 (15 d)"
+     ]
+    },
+    {
+     "etiqueta": "CALCULATED",
+     "texto": "legado: 10671 linhas com data de referencia fora de terca-feira",
+     "n": 10671
+    },
+    {
+     "etiqueta": "CALCULATED",
+     "texto": "desagregado: intervalos > 7 dias entre datas de referencia",
+     "n": 11,
+     "exemplos": [
+      "2006-07-03->2006-07-11 (8 d)",
+      "2006-12-26->2007-01-03 (8 d)",
+      "2007-12-31->2008-01-08 (8 d)",
+      "2008-12-22->2008-12-30 (8 d)",
+      "2009-11-09->2009-11-17 (8 d)",
+      "2012-12-31->2013-01-08 (8 d)",
+      "2017-07-03->2017-07-11 (8 d)",
+      "2018-12-31->2019-01-08 (8 d)"
+     ]
+    },
+    {
+     "etiqueta": "CALCULATED",
+     "texto": "desagregado: 2012 linhas com data de referencia fora de terca-feira",
+     "n": 2012
+    },
+    {
+     "etiqueta": "OBSERVED",
+     "texto": "financeiro: coluna '...YYYY-MM-DD' com data no formato 'MM/DD/AAAA hh:mm:ss AM'",
+     "n": 18911,
+     "exemplos": [
+      "fin_fut_txt_2006_2016.zip x18911"
+     ]
+    },
+    {
+     "etiqueta": "CALCULATED",
+     "texto": "financeiro: intervalos > 7 dias entre datas de referencia",
+     "n": 11,
+     "exemplos": [
+      "2006-07-03->2006-07-11 (8 d)",
+      "2006-12-26->2007-01-03 (8 d)",
+      "2007-12-31->2008-01-08 (8 d)",
+      "2008-12-22->2008-12-30 (8 d)",
+      "2009-11-09->2009-11-17 (8 d)",
+      "2012-12-31->2013-01-08 (8 d)",
+      "2017-07-03->2017-07-11 (8 d)",
+      "2018-12-31->2019-01-08 (8 d)"
+     ]
+    },
+    {
+     "etiqueta": "CALCULATED",
+     "texto": "financeiro: 564 linhas com data de referencia fora de terca-feira",
+     "n": 564
+    }
+   ],
+   "nao_validado": [],
+   "veredito": "com achados"
+  },
+  {
+   "dataset_id": "D07_BCB_SGS",
+   "descricao": "SGS do BCB: 11 (Selic diaria) e 432 (meta Selic), em blocos JSON",
+   "arquivos": 8,
+   "bytes": 796718,
+   "linhas": 20236,
+   "periodo": [
+    "1986-06-04",
+    "2026-10-29"
+   ],
+   "checagens": {
+    "sgs11": {
+     "n": 10129,
+     "unicas": 10129,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "1986-06-04",
+     "fim": "2026-10-28",
+     "fim_de_semana": 0,
+     "passo_mediano_dias": 1.0,
+     "maior_buraco_dias": 6,
+     "maior_buraco_apos": "1987-04-15",
+     "dias_uteis_sem_dado": 412,
+     "dias_uteis_sem_dado_exemplos": [
+      "2026-02-16",
+      "2026-02-17",
+      "2026-04-03",
+      "2026-04-21",
+      "2026-05-01",
+      "2026-06-04",
+      "2026-09-07",
+      "2026-10-12"
+     ]
+    },
+    "sgs432": {
+     "n": 10107,
+     "unicas": 10107,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "1999-03-05",
+     "fim": "2026-11-04",
+     "fim_de_semana": 2888,
+     "passo_mediano_dias": 1.0,
+     "maior_buraco_dias": 1,
+     "maior_buraco_apos": "1999-03-05"
+    }
+   },
+   "achados": [
+    {
+     "etiqueta": "OBSERVED",
+     "texto": "sgs432: 6 datas depois de hoje (2026-10-29); ultima 2026-11-04",
+     "n": 6,
+     "exemplos": [
+      "2026-10-30",
+      "2026-10-31",
+      "2026-11-01",
+      "2026-11-02",
+      "2026-11-03",
+      "2026-11-04"
+     ]
+    }
+   ],
+   "nao_validado": [],
+   "veredito": "com achados"
+  },
+  {
+   "dataset_id": "C05_BCB_PTAX",
+   "descricao": "PTAX do dolar (Olinda, CSV)",
+   "arquivos": 1,
+   "bytes": 432360,
+   "linhas": 10499,
+   "periodo": [
+    "1984-12-03",
+    "2026-10-28"
+   ],
+   "checagens": {
+    "ptax": {
+     "n": 10499,
+     "unicas": 10489,
+     "duplicadas": 10,
+     "fora_de_ordem": 0,
+     "inicio": "1984-12-03",
+     "fim": "2026-10-28",
+     "fim_de_semana": 1,
+     "passo_mediano_dias": 1.0,
+     "maior_buraco_dias": 10,
+     "maior_buraco_apos": "1984-12-28",
+     "dias_uteis_sem_dado": 445,
+     "dias_uteis_sem_dado_exemplos": [
+      "2026-02-16",
+      "2026-02-17",
+      "2026-04-03",
+      "2026-04-21",
+      "2026-05-01",
+      "2026-06-04",
+      "2026-09-07",
+      "2026-10-12"
+     ]
+    }
+   },
+   "achados": [
+    {
+     "etiqueta": "CALCULATED",
+     "texto": "ptax: 10 datas repetidas",
+     "n": 10,
+     "exemplos": [
+      "1984-12-03",
+      "1984-12-05",
+      "1990-01-03",
+      "1991-01-02",
+      "1996-01-12",
+      "1996-04-11",
+      "1997-08-29",
+      "2001-12-21"
+     ]
+    },
+    {
+     "etiqueta": "OBSERVED",
+     "texto": "ptax: 1 linhas em sabado/domingo",
+     "n": 1,
+     "exemplos": [
+      "1992-04-04"
+     ]
+    },
+    {
+     "etiqueta": "OBSERVED",
+     "texto": "cotacaoCompra > cotacaoVenda",
+     "n": 16,
+     "exemplos": [
+      "1990-05-22",
+      "1990-09-19",
+      "1990-09-20",
+      "1990-12-18",
+      "1991-07-19",
+      "1991-09-26",
+      "1991-09-27",
+      "1991-09-30"
+     ]
+    }
+   ],
+   "nao_validado": [],
+   "veredito": "com achados"
+  },
+  {
+   "dataset_id": "D08_BCB_FOCUS",
+   "descricao": "Focus (expectativas anuais e Selic por reuniao)",
+   "arquivos": 5,
+   "bytes": 16997951,
+   "linhas": 256869,
+   "periodo": [
+    "1999-07-01",
+    "2026-10-23"
+   ],
+   "checagens": {
+    "focus_anual_cambio": {
+     "linhas": 39455,
+     "inicio": "2000-01-03",
+     "fim": "2026-10-23",
+     "datas_de_coleta": 6726,
+     "chave": [
+      "Indicador",
+      "IndicadorDetalhe",
+      "Data",
+      "DataReferencia",
+      "baseCalculo"
+     ],
+     "linhas_repetidas_na_chave": 0
+    },
+    "focus_anual_ipca": {
+     "linhas": 48732,
+     "inicio": "2000-01-03",
+     "fim": "2026-10-23",
+     "datas_de_coleta": 6726,
+     "chave": [
+      "Indicador",
+      "IndicadorDetalhe",
+      "Data",
+      "DataReferencia",
+      "baseCalculo"
+     ],
+     "linhas_repetidas_na_chave": 0
+    },
+    "focus_anual_pib": {
+     "linhas": 39780,
+     "inicio": "1999-07-01",
+     "fim": "2026-10-23",
+     "datas_de_coleta": 6850,
+     "chave": [
+      "Indicador",
+      "IndicadorDetalhe",
+      "Data",
+      "DataReferencia",
+      "baseCalculo"
+     ],
+     "linhas_repetidas_na_chave": 0
+    },
+    "focus_anual_selic": {
+     "linhas": 39632,
+     "inicio": "2000-01-03",
+     "fim": "2026-10-23",
+     "datas_de_coleta": 6726,
+     "chave": [
+      "Indicador",
+      "IndicadorDetalhe",
+      "Data",
+      "DataReferencia",
+      "baseCalculo"
+     ],
+     "linhas_repetidas_na_chave": 0
+    },
+    "focus_selic_reuniao": {
+     "linhas": 89270,
+     "inicio": "2004-11-18",
+     "fim": "2026-10-23",
+     "datas_de_coleta": 5506,
+     "chave": [
+      "Indicador",
+      "Data",
+      "Reuniao",
+      "baseCalculo"
+     ],
+     "linhas_repetidas_na_chave": 0
+    }
+   },
+   "achados": [],
+   "nao_validado": [],
+   "veredito": "sem achados"
+  },
+  {
+   "dataset_id": "I09_GPR",
+   "descricao": "Geopolitical Risk (XLS)",
+   "arquivos": 2,
+   "bytes": 5990912,
+   "linhas": 0,
+   "periodo": null,
+   "checagens": {},
+   "achados": [],
+   "nao_validado": [
+    "data_gpr_daily_recent.xls: XLS (BIFF/OLE2, assinatura ok); a biblioteca padrao nao le XLS",
+    "data_gpr_export.xls: XLS (BIFF/OLE2, assinatura ok); a biblioteca padrao nao le XLS"
+   ],
+   "veredito": "nao validado"
+  },
+  {
+   "dataset_id": "I10_EPU",
+   "descricao": "Economic Policy Uncertainty (CSV diario e XLSX mensais)",
+   "arquivos": 3,
+   "bytes": 340255,
+   "linhas": 15276,
+   "periodo": [
+    "1985-01-01",
+    "2026-10-28"
+   ],
+   "checagens": {
+    "epu_diario": {
+     "n": 15276,
+     "unicas": 15276,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "1985-01-01",
+     "fim": "2026-10-28",
+     "fim_de_semana": 4364,
+     "passo_mediano_dias": 1,
+     "maior_buraco_dias": 1,
+     "maior_buraco_apos": "1985-01-01",
+     "dias_corridos_sem_dado": 0
+    },
+    "Global_Policy_Uncertainty_Data": {
+     "folhas": 1,
+     "linhas_xml_por_folha": {
+      "xl/worksheets/sheet1.xml": 357
+     }
+    },
+    "US_Policy_Uncertainty_Data": {
+     "folhas": 2,
+     "linhas_xml_por_folha": {
+      "xl/worksheets/sheet1.xml": 1523,
+      "xl/worksheets/sheet2.xml": 503
+     }
+    }
+   },
+   "achados": [],
+   "nao_validado": [
+    "Global_Policy_Uncertainty_Data.xlsx: XLSX aberto como ZIP, so contagem de linhas; valores nao lidos",
+    "US_Policy_Uncertainty_Data.xlsx: XLSX aberto como ZIP, so contagem de linhas; valores nao lidos"
+   ],
+   "veredito": "sem achados"
+  },
+  {
+   "dataset_id": "F08_FINRA_SHVOL",
+   "descricao": "FINRA short volume CNMS (TXT diario, separado por |)",
+   "arquivos": 2072,
+   "bytes": 688448293,
+   "linhas": 19929064,
+   "periodo": [
+    "2018-08-01",
+    "2026-10-28"
+   ],
+   "checagens": {
+    "arquivos": {
+     "n": 2072,
+     "unicas": 2072,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "2018-08-01",
+     "fim": "2026-10-28",
+     "fim_de_semana": 0,
+     "passo_mediano_dias": 1,
+     "maior_buraco_dias": 4,
+     "maior_buraco_apos": "2018-08-31",
+     "dias_uteis_sem_dado": 79,
+     "dias_uteis_sem_dado_exemplos": [
+      "2026-01-01",
+      "2026-01-19",
+      "2026-02-16",
+      "2026-04-03",
+      "2026-05-25",
+      "2026-06-19",
+      "2026-07-03",
+      "2026-09-07"
+     ],
+     "linhas_por_dia_min": 7335,
+     "linhas_por_dia_min_em": "2018-11-23",
+     "linhas_por_dia_max": 12465,
+     "linhas_por_dia_mediana": 9833.5,
+     "pregoes_vix_sem_arquivo_finra": 33
+    }
+   },
+   "achados": [
+    {
+     "etiqueta": "OBSERVED",
+     "texto": "linha mal formada",
+     "n": 2072,
+     "exemplos": [
+      "CNMSshvol20180801.txt: '7676\\r\\n'",
+      "CNMSshvol20180802.txt: '7714\\r\\n'",
+      "CNMSshvol20180803.txt: '7699\\r\\n'",
+      "CNMSshvol20180806.txt: '7694\\r\\n'",
+      "CNMSshvol20180807.txt: '7758\\r\\n'",
+      "CNMSshvol20180808.txt: '7673\\r\\n'",
+      "CNMSshvol20180809.txt: '7684\\r\\n'",
+      "CNMSshvol20180810.txt: '7683\\r\\n'"
+     ]
+    },
+    {
+     "etiqueta": "CALCULATED",
+     "texto": "dias com linha no VIX_History da Cboe e sem arquivo FINRA (403); conferir se sao feriados de bolsa dos EUA",
+     "n": 33,
+     "exemplos": [
+      "2022-05-30",
+      "2022-06-20",
+      "2022-07-04",
+      "2022-09-05",
+      "2022-11-24",
+      "2023-01-16",
+      "2023-02-20",
+      "2023-05-29"
+     ]
+    }
+   ],
+   "nao_validado": [],
+   "veredito": "com achados"
+  },
+  {
+   "dataset_id": "I03_TZDB",
+   "descricao": "IANA tzdb (tar.gz)",
+   "arquivos": 2,
+   "bytes": 813142,
+   "linhas": 0,
+   "periodo": null,
+   "checagens": {
+    "tzcode2026f.tar.gz": {
+     "membros": 41,
+     "version": "2026f"
+    },
+    "tzdata2026f.tar.gz": {
+     "membros": 32,
+     "version": "2026f"
+    }
+   },
+   "achados": [],
+   "nao_validado": [],
+   "veredito": "sem achados"
+  },
+  {
+   "dataset_id": "G01_BINANCE_VISION",
+   "descricao": "Binance Vision BTC/ETH: klines 1m, funding e metrics (ZIP com CSV)",
+   "arquivos": 4584,
+   "bytes": 804678359,
+   "linhas": 17930548,
+   "periodo": [
+    "2017-08-01",
+    "2026-10-27"
+   ],
+   "checagens": {
+    "spot1m_BTCUSDT": {
+     "arquivos": 110,
+     "linhas": 4789279,
+     "inicio": "2017-08-01",
+     "ultimo_periodo": "2026-09-01",
+     "periodos_ausentes_entre_arquivos": 0,
+     "unidade_timestamp": {
+      "ms": 3870559,
+      "us": 918720
+     },
+     "primeiro_arquivo_em_microssegundos": "2025-01-01",
+     "faltando": 8561,
+     "duplicadas": 0,
+     "fora_do_periodo": 0,
+     "fora_de_ordem": 0,
+     "ohlc_inconsistente": 0,
+     "close_time_inesperado": 18,
+     "minutos_antes_do_1o_registro_no_1o_mes": 23280,
+     "faltando_pct": 0.1784
+    },
+    "spot1m_ETHUSDT": {
+     "arquivos": 110,
+     "linhas": 4789278,
+     "inicio": "2017-08-01",
+     "ultimo_periodo": "2026-09-01",
+     "periodos_ausentes_entre_arquivos": 0,
+     "unidade_timestamp": {
+      "ms": 3870558,
+      "us": 918720
+     },
+     "primeiro_arquivo_em_microssegundos": "2025-01-01",
+     "faltando": 8562,
+     "duplicadas": 0,
+     "fora_do_periodo": 0,
+     "fora_de_ordem": 0,
+     "ohlc_inconsistente": 0,
+     "close_time_inesperado": 18,
+     "minutos_antes_do_1o_registro_no_1o_mes": 23280,
+     "faltando_pct": 0.1785
+    },
+    "um1m_BTCUSDT": {
+     "arquivos": 81,
+     "linhas": 3549600,
+     "inicio": "2020-01-01",
+     "ultimo_periodo": "2026-09-01",
+     "periodos_ausentes_entre_arquivos": 0,
+     "unidade_timestamp": {
+      "ms": 3549600
+     },
+     "primeiro_arquivo_em_microssegundos": null,
+     "faltando": 0,
+     "duplicadas": 0,
+     "fora_do_periodo": 0,
+     "fora_de_ordem": 0,
+     "ohlc_inconsistente": 0,
+     "close_time_inesperado": 0,
+     "minutos_antes_do_1o_registro_no_1o_mes": 0,
+     "faltando_pct": 0.0
+    },
+    "um1m_ETHUSDT": {
+     "arquivos": 81,
+     "linhas": 3549600,
+     "inicio": "2020-01-01",
+     "ultimo_periodo": "2026-09-01",
+     "periodos_ausentes_entre_arquivos": 0,
+     "unidade_timestamp": {
+      "ms": 3549600
+     },
+     "primeiro_arquivo_em_microssegundos": null,
+     "faltando": 0,
+     "duplicadas": 0,
+     "fora_do_periodo": 0,
+     "fora_de_ordem": 0,
+     "ohlc_inconsistente": 0,
+     "close_time_inesperado": 0,
+     "minutos_antes_do_1o_registro_no_1o_mes": 0,
+     "faltando_pct": 0.0
+    },
+    "umfund_BTCUSDT": {
+     "arquivos": 81,
+     "linhas": 7395,
+     "inicio": "2020-01-01",
+     "ultimo_periodo": "2026-09-01",
+     "periodos_ausentes_entre_arquivos": 0,
+     "unidade_timestamp": {},
+     "primeiro_arquivo_em_microssegundos": null,
+     "faltando": 0,
+     "duplicadas": 0,
+     "fora_do_periodo": 0,
+     "fora_de_ordem": 0,
+     "intervalo_funding_h": {
+      "8": 7395
+     },
+     "taxa_abs_maior_0_3pct": 0
+    },
+    "umfund_ETHUSDT": {
+     "arquivos": 81,
+     "linhas": 7395,
+     "inicio": "2020-01-01",
+     "ultimo_periodo": "2026-09-01",
+     "periodos_ausentes_entre_arquivos": 0,
+     "unidade_timestamp": {},
+     "primeiro_arquivo_em_microssegundos": null,
+     "faltando": 0,
+     "duplicadas": 0,
+     "fora_do_periodo": 0,
+     "fora_de_ordem": 0,
+     "intervalo_funding_h": {
+      "8": 7395
+     },
+     "taxa_abs_maior_0_3pct": 5
+    },
+    "ummetrics_BTCUSDT": {
+     "arquivos": 2248,
+     "linhas": 722045,
+     "inicio": "2020-09-01",
+     "ultimo_periodo": "2026-10-27",
+     "periodos_ausentes_entre_arquivos": 0,
+     "unidade_timestamp": {},
+     "primeiro_arquivo_em_microssegundos": null,
+     "faltando": 634,
+     "duplicadas": 75255,
+     "fora_do_periodo": 0,
+     "fora_de_ordem": 0,
+     "faltando_pct": 0.0979
+    },
+    "ummetrics_ETHUSDT": {
+     "arquivos": 1792,
+     "linhas": 515956,
+     "inicio": "2021-12-01",
+     "ultimo_periodo": "2026-10-27",
+     "periodos_ausentes_entre_arquivos": 0,
+     "unidade_timestamp": {},
+     "primeiro_arquivo_em_microssegundos": null,
+     "faltando": 140,
+     "duplicadas": 0,
+     "fora_do_periodo": 0,
+     "fora_de_ordem": 0,
+     "faltando_pct": 0.0271
+    }
+   },
+   "achados": [
+    {
+     "etiqueta": "CALCULATED",
+     "texto": "spot1m_BTCUSDT: registros faltando no periodo de cada arquivo",
+     "n": 8561,
+     "exemplos": [
+      "spot1m_BTCUSDT-1m-2017-09.zip: 420 no meio, 0+0 nas bordas",
+      "spot1m_BTCUSDT-1m-2017-12.zip: 76 no meio, 0+0 nas bordas",
+      "spot1m_BTCUSDT-1m-2018-01.zip: 125 no meio, 0+0 nas bordas",
+      "spot1m_BTCUSDT-1m-2018-02.zip: 2059 no meio, 0+0 nas bordas",
+      "spot1m_BTCUSDT-1m-2018-06.zip: 705 no meio, 0+0 nas bordas",
+      "spot1m_BTCUSDT-1m-2018-07.zip: 457 no meio, 0+0 nas bordas",
+      "spot1m_BTCUSDT-1m-2018-10.zip: 210 no meio, 0+0 nas bordas",
+      "spot1m_BTCUSDT-1m-2018-11.zip: 420 no meio, 0+0 nas bordas"
+     ]
+    },
+    {
+     "etiqueta": "OBSERVED",
+     "texto": "spot1m_BTCUSDT: close_time diferente de open_time + 59999 ms",
+     "n": 18,
+     "exemplos": [
+      "spot1m_BTCUSDT-1m-2017-09.zip:1504713540000",
+      "spot1m_BTCUSDT-1m-2017-12.zip:1512367200000",
+      "spot1m_BTCUSDT-1m-2017-12.zip:1513591220799",
+      "spot1m_BTCUSDT-1m-2017-12.zip:1513600140000",
+      "spot1m_BTCUSDT-1m-2018-01.zip:1515034800000",
+      "spot1m_BTCUSDT-1m-2018-02.zip:1518049680000",
+      "spot1m_BTCUSDT-1m-2018-02.zip:1518242354789",
+      "spot1m_BTCUSDT-1m-2018-02.zip:1518321600000"
+     ]
+    },
+    {
+     "etiqueta": "OBSERVED",
+     "texto": "spot1m_BTCUSDT: unidade do timestamp muda de ms para us a partir de 2025-01-01; normalizar antes de juntar",
+     "n": 4789279
+    },
+    {
+     "etiqueta": "CALCULATED",
+     "texto": "spot1m_ETHUSDT: registros faltando no periodo de cada arquivo",
+     "n": 8562,
+     "exemplos": [
+      "spot1m_ETHUSDT-1m-2017-09.zip: 420 no meio, 0+0 nas bordas",
+      "spot1m_ETHUSDT-1m-2017-12.zip: 76 no meio, 0+0 nas bordas",
+      "spot1m_ETHUSDT-1m-2018-01.zip: 125 no meio, 0+0 nas bordas",
+      "spot1m_ETHUSDT-1m-2018-02.zip: 2059 no meio, 0+0 nas bordas",
+      "spot1m_ETHUSDT-1m-2018-06.zip: 705 no meio, 0+0 nas bordas",
+      "spot1m_ETHUSDT-1m-2018-07.zip: 457 no meio, 0+0 nas bordas",
+      "spot1m_ETHUSDT-1m-2018-10.zip: 210 no meio, 0+0 nas bordas",
+      "spot1m_ETHUSDT-1m-2018-11.zip: 420 no meio, 0+0 nas bordas"
+     ]
+    },
+    {
+     "etiqueta": "OBSERVED",
+     "texto": "spot1m_ETHUSDT: close_time diferente de open_time + 59999 ms",
+     "n": 18,
+     "exemplos": [
+      "spot1m_ETHUSDT-1m-2017-09.zip:1504713540000",
+      "spot1m_ETHUSDT-1m-2017-12.zip:1512367200000",
+      "spot1m_ETHUSDT-1m-2017-12.zip:1513591220810",
+      "spot1m_ETHUSDT-1m-2017-12.zip:1513600140000",
+      "spot1m_ETHUSDT-1m-2018-01.zip:1515034800000",
+      "spot1m_ETHUSDT-1m-2018-02.zip:1518049680000",
+      "spot1m_ETHUSDT-1m-2018-02.zip:1518242354800",
+      "spot1m_ETHUSDT-1m-2018-02.zip:1518321600000"
+     ]
+    },
+    {
+     "etiqueta": "OBSERVED",
+     "texto": "spot1m_ETHUSDT: unidade do timestamp muda de ms para us a partir de 2025-01-01; normalizar antes de juntar",
+     "n": 4789278
+    },
+    {
+     "etiqueta": "OBSERVED",
+     "texto": "umfund_ETHUSDT: funding com |taxa| > 0,3%",
+     "n": 5,
+     "exemplos": [
+      "umfund_ETHUSDT-fundingRate-2020-02.zip:1581494400001:0.00367190",
+      "umfund_ETHUSDT-fundingRate-2021-01.zip:1609747200000:0.00375000",
+      "umfund_ETHUSDT-fundingRate-2021-01.zip:1610236800000:0.00340522",
+      "umfund_ETHUSDT-fundingRate-2021-05.zip:1621440000018:-0.00356332",
+      "umfund_ETHUSDT-fundingRate-2022-09.zip:1663200000019:-0.00301937"
+     ]
+    },
+    {
+     "etiqueta": "CALCULATED",
+     "texto": "ummetrics_BTCUSDT: registros faltando no periodo de cada arquivo",
+     "n": 634,
+     "exemplos": [
+      "ummetrics_BTCUSDT-metrics-2020-09-27.zip: 4 de 288",
+      "ummetrics_BTCUSDT-metrics-2020-10-22.zip: 10 de 288",
+      "ummetrics_BTCUSDT-metrics-2020-11-15.zip: 11 de 288",
+      "ummetrics_BTCUSDT-metrics-2020-11-21.zip: 8 de 288",
+      "ummetrics_BTCUSDT-metrics-2021-01-20.zip: 17 de 288",
+      "ummetrics_BTCUSDT-metrics-2021-02-05.zip: 9 de 288",
+      "ummetrics_BTCUSDT-metrics-2021-02-07.zip: 1 de 288",
+      "ummetrics_BTCUSDT-metrics-2021-02-10.zip: 1 de 288"
+     ]
+    },
+    {
+     "etiqueta": "OBSERVED",
+     "texto": "ummetrics_BTCUSDT: timestamps repetidos",
+     "n": 75255
+    },
+    {
+     "etiqueta": "CALCULATED",
+     "texto": "ummetrics_ETHUSDT: registros faltando no periodo de cada arquivo",
+     "n": 140,
+     "exemplos": [
+      "ummetrics_ETHUSDT-metrics-2021-12-04.zip: 3 de 288",
+      "ummetrics_ETHUSDT-metrics-2021-12-15.zip: 1 de 288",
+      "ummetrics_ETHUSDT-metrics-2021-12-24.zip: 1 de 288",
+      "ummetrics_ETHUSDT-metrics-2021-12-29.zip: 1 de 288",
+      "ummetrics_ETHUSDT-metrics-2021-12-31.zip: 1 de 288",
+      "ummetrics_ETHUSDT-metrics-2023-09-12.zip: 3 de 288",
+      "ummetrics_ETHUSDT-metrics-2024-02-16.zip: 125 de 288",
+      "ummetrics_ETHUSDT-metrics-2024-10-28.zip: 2 de 288"
+     ]
+    }
+   ],
+   "nao_validado": [],
+   "veredito": "com achados"
+  },
+  {
+   "dataset_id": "B05_FF_LIBRARY",
+   "descricao": "Kenneth French Data Library (ZIP com CSV em blocos)",
+   "arquivos": 6,
+   "bytes": 444805,
+   "linhas": 71652,
+   "periodo": [
+    "1926-07-01",
+    "2026-09-30"
+   ],
+   "checagens": {
+    "F-F_Momentum_Factor_CSV": {
+     "n": 1197,
+     "unicas": 1197,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "1927-01-01",
+     "fim": "2026-09-01",
+     "fim_de_semana": 343,
+     "passo_mediano_dias": 31.0,
+     "maior_buraco_dias": 31,
+     "maior_buraco_apos": "1927-01-01",
+     "colunas": ",Mom",
+     "linhas_de_nota_antes": 13,
+     "valores_ausentes_-99_99": 0
+    },
+    "F-F_Momentum_Factor_daily_CSV": {
+     "n": 26237,
+     "unicas": 26237,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "1926-11-03",
+     "fim": "2026-09-30",
+     "fim_de_semana": 1142,
+     "passo_mediano_dias": 1.0,
+     "maior_buraco_dias": 12,
+     "maior_buraco_apos": "1933-03-03",
+     "dias_uteis_sem_dado": 971,
+     "dias_uteis_sem_dado_exemplos": [
+      "2026-01-01",
+      "2026-01-19",
+      "2026-02-16",
+      "2026-04-03",
+      "2026-05-25",
+      "2026-06-19",
+      "2026-07-03",
+      "2026-09-07"
+     ],
+     "colunas": ",Mom",
+     "linhas_de_nota_antes": 13,
+     "valores_ausentes_-99_99": 0
+    },
+    "F-F_Research_Data_5_Factors_2x3_CSV": {
+     "n": 759,
+     "unicas": 759,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "1963-07-01",
+     "fim": "2026-09-01",
+     "fim_de_semana": 217,
+     "passo_mediano_dias": 31.0,
+     "maior_buraco_dias": 31,
+     "maior_buraco_apos": "1963-07-01",
+     "colunas": ",Mkt-RF,SMB,HML,RMW,CMA,RF",
+     "linhas_de_nota_antes": 4,
+     "valores_ausentes_-99_99": 0
+    },
+    "F-F_Research_Data_5_Factors_2x3_daily_CSV": {
+     "n": 15918,
+     "unicas": 15918,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "1963-07-01",
+     "fim": "2026-09-30",
+     "fim_de_semana": 0,
+     "passo_mediano_dias": 1,
+     "maior_buraco_dias": 7,
+     "maior_buraco_apos": "2001-09-10",
+     "dias_uteis_sem_dado": 585,
+     "dias_uteis_sem_dado_exemplos": [
+      "2026-01-01",
+      "2026-01-19",
+      "2026-02-16",
+      "2026-04-03",
+      "2026-05-25",
+      "2026-06-19",
+      "2026-07-03",
+      "2026-09-07"
+     ],
+     "colunas": ",Mkt-RF,SMB,HML,RMW,CMA,RF",
+     "linhas_de_nota_antes": 4,
+     "valores_ausentes_-99_99": 0
+    },
+    "F-F_Research_Data_Factors_CSV": {
+     "n": 1203,
+     "unicas": 1203,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "1926-07-01",
+     "fim": "2026-09-01",
+     "fim_de_semana": 344,
+     "passo_mediano_dias": 31.0,
+     "maior_buraco_dias": 31,
+     "maior_buraco_apos": "1926-07-01",
+     "colunas": ",Mkt-RF,SMB,HML,RF",
+     "linhas_de_nota_antes": 4,
+     "valores_ausentes_-99_99": 0
+    },
+    "F-F_Research_Data_Factors_daily_CSV": {
+     "n": 26338,
+     "unicas": 26338,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "1926-07-01",
+     "fim": "2026-09-30",
+     "fim_de_semana": 1158,
+     "passo_mediano_dias": 1,
+     "maior_buraco_dias": 12,
+     "maior_buraco_apos": "1933-03-03",
+     "dias_uteis_sem_dado": 975,
+     "dias_uteis_sem_dado_exemplos": [
+      "2026-01-01",
+      "2026-01-19",
+      "2026-02-16",
+      "2026-04-03",
+      "2026-05-25",
+      "2026-06-19",
+      "2026-07-03",
+      "2026-09-07"
+     ],
+     "colunas": ",Mkt-RF,SMB,HML,RF",
+     "linhas_de_nota_antes": 4,
+     "valores_ausentes_-99_99": 0
+    }
+   },
+   "achados": [
+    {
+     "etiqueta": "OBSERVED",
+     "texto": "F-F_Momentum_Factor_daily_CSV: 1142 linhas em sabado/domingo",
+     "n": 1142,
+     "exemplos": [
+      "1926-11-06",
+      "1926-11-13",
+      "1926-11-20",
+      "1926-11-27",
+      "1926-12-04",
+      "1926-12-11",
+      "1926-12-18",
+      "1927-01-08"
+     ]
+    },
+    {
+     "etiqueta": "OBSERVED",
+     "texto": "F-F_Research_Data_Factors_daily_CSV: 1158 linhas em sabado/domingo",
+     "n": 1158,
+     "exemplos": [
+      "1926-07-10",
+      "1926-07-17",
+      "1926-07-24",
+      "1926-07-31",
+      "1926-08-07",
+      "1926-08-14",
+      "1926-08-21",
+      "1926-08-28"
+     ]
+    }
+   ],
+   "nao_validado": [
+    "F-F_Momentum_Factor_CSV.zip: so o 1o bloco (mensal/diario) foi lido; blocos anuais nao",
+    "F-F_Momentum_Factor_daily_CSV.zip: so o 1o bloco (mensal/diario) foi lido; blocos anuais nao",
+    "F-F_Research_Data_5_Factors_2x3_CSV.zip: so o 1o bloco (mensal/diario) foi lido; blocos anuais nao",
+    "F-F_Research_Data_5_Factors_2x3_daily_CSV.zip: so o 1o bloco (mensal/diario) foi lido; blocos anuais nao",
+    "F-F_Research_Data_Factors_CSV.zip: so o 1o bloco (mensal/diario) foi lido; blocos anuais nao",
+    "F-F_Research_Data_Factors_daily_CSV.zip: so o 1o bloco (mensal/diario) foi lido; blocos anuais nao"
+   ],
+   "veredito": "com achados"
+  },
+  {
+   "dataset_id": "B16_FJA_SP500",
+   "descricao": "composicao historica do S&P 500 (fja05680, experimental)",
+   "arquivos": 7,
+   "bytes": 13413531,
+   "linhas": 5315,
+   "periodo": [
+    "1996-01-02",
+    "2026-08-18"
+   ],
+   "checagens": {
+    "historical_components_changes": {
+     "n": 2595,
+     "unicas": 2595,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "1996-01-02",
+     "fim": "2019-01-11",
+     "fim_de_semana": 0,
+     "passo_mediano_dias": 2.0,
+     "maior_buraco_dias": 20,
+     "maior_buraco_apos": "2003-01-29",
+     "tickers_por_data_min": 499,
+     "tickers_por_data_max": 517
+    },
+    "historical_components_changes_updated": {
+     "n": 2720,
+     "unicas": 2720,
+     "duplicadas": 0,
+     "fora_de_ordem": 0,
+     "inicio": "1996-01-02",
+     "fim": "2026-08-18",
+     "fim_de_semana": 1,
+     "passo_mediano_dias": 2,
+     "maior_buraco_dias": 91,
+     "maior_buraco_apos": "2024-12-23",
+     "tickers_por_data_min": 487,
+     "tickers_por_data_max": 507
+    },
+    "sp500_ticker_start_end": {
+     "linhas": 1262,
+     "fim_antes_do_inicio": 0
+    }
+   },
+   "achados": [
+    {
+     "etiqueta": "OBSERVED",
+     "texto": "historical_components_changes_updated: 1 linhas em sabado/domingo",
+     "n": 1,
+     "exemplos": [
+      "2019-06-01"
+     ]
+    }
+   ],
+   "nao_validado": [
+    "sp500_changes_since_2019.csv: so registrado (referencia)",
+    "sp500.csv: so registrado (referencia)",
+    "README.md: so registrado (referencia)",
+    "LICENSE.txt: so registrado (referencia)"
+   ],
+   "veredito": "com achados"
+  }
+ ]
+}

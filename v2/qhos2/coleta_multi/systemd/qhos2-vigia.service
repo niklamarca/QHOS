@@ -1,0 +1,22 @@
+[Unit]
+Description=QHOS V2 laco da vigia da captura (sobe no boot; so le, nao conecta)
+After=qhos2-agenda.service
+
+[Service]
+Type=simple
+WorkingDirectory=%h/qhos-v2
+Environment=QHOS2_DATA_ROOT=%h/qhos-v2-data
+# Nao sobe se o laco ja estiver rodando no tmux `vigia` (duas vigias releriam a mesma captura durante o pregao).
+ExecCondition=/bin/sh -c '! pgrep -f "[b]in/vigia_laco.sh" >/dev/null'
+ExecStart=%h/qhos-v2/bin/vigia_laco.sh
+Restart=always
+RestartSec=30
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=%h/qhos-v2-data/vigia
+
+[Install]
+WantedBy=default.target

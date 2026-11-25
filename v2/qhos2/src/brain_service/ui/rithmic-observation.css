@@ -1,0 +1,272 @@
+.rithmic-observation{--ro-accent:var(--mint,#34d399);--ro-text:var(--txt,var(--text,#e6f0ec));--ro-dim:var(--dim,#8a9e93);--ro-line:var(--line,rgba(255,255,255,.07));background:var(--panel,#0b1310);border:1px solid var(--ro-line);border-radius:14px;padding:16px 18px;min-width:0;flex:0 0 auto;color:var(--ro-text);font-size:12px;line-height:1.5;overflow-wrap:anywhere}
+.ro-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}.ro-eyebrow{font:8px var(--mono,Consolas,monospace);letter-spacing:1.3px;color:var(--ro-dim)}.ro-heading h2{font-size:14px;font-weight:550;padding:0;margin:4px 0 0;border:0;display:block}.ro-heading h2 span{font-weight:400;color:var(--ro-dim)}.ro-motion{background:transparent;border:1px solid var(--ro-line);border-radius:6px;color:var(--ro-dim);padding:6px 9px;font-size:10px;cursor:pointer;white-space:nowrap}.ro-context{display:flex;gap:7px 15px;align-items:center;flex-wrap:wrap;font-size:10px;color:var(--ro-dim);margin:10px 0 15px}.ro-status{font-weight:500;color:var(--ro-accent)}[data-state=stale]>.ro-context>.ro-status,[data-state=recovering]>.ro-context>.ro-status,[data-state=recorded]>.ro-context>.ro-status{color:var(--amber,#fbbf24)}[data-state=error]>.ro-context>.ro-status{color:var(--red,#f87171)}
+.ro-flow{display:flex;align-items:center;min-width:0}.ro-node{min-width:0;flex:1;display:flex;align-items:center;gap:9px;min-height:56px;padding:8px;border:1px solid transparent;border-radius:7px;background:transparent;color:var(--ro-text);cursor:pointer;text-align:left}.ro-node>i{width:7px;height:7px;border:1px solid var(--ro-dim);border-radius:50%;background:transparent;flex-shrink:0}.ro-node>span{min-width:0}.ro-node b{display:block;font-size:11px;font-weight:500}.ro-node small{display:block;font-size:9px;color:var(--ro-dim);margin-top:4px;line-height:1.45}.ro-node[aria-pressed=true]{background:color-mix(in srgb,var(--ro-accent) 5%,transparent);border-color:color-mix(in srgb,var(--ro-accent) 24%,transparent)}.ro-node:hover{background:color-mix(in srgb,var(--ro-accent) 8%,transparent)}.ro-node[data-state=idle]>i{border-color:var(--ro-accent)}.ro-node[data-active=true]>i{background:var(--ro-accent);border-color:var(--ro-accent);box-shadow:0 0 8px color-mix(in srgb,var(--ro-accent) 30%,transparent)}.ro-node[data-state=recovering]>i,.ro-node[data-state=stale]>i{border-color:var(--amber,#fbbf24)}.ro-node[data-state=error]>i{border-color:var(--red,#f87171);background:var(--red,#f87171)}.ro-node[data-state=disabled]{opacity:.6}.ro-node[data-state=connecting]>i{animation:ro-connect 2.8s ease-in-out infinite}.ro-node[data-state=recovering]>i{animation:ro-recover 3s ease-in-out infinite}
+.ro-link{height:1px;background:var(--ro-line);flex:0 0 24px;position:relative;pointer-events:none}.ro-link:after{content:'';position:absolute;right:0;top:-2px;width:4px;height:4px;border-top:1px solid var(--ro-dim);border-right:1px solid var(--ro-dim);transform:rotate(45deg);opacity:.45}.ro-link i{display:none;position:absolute;top:-1px;left:0;width:6px;height:3px;border-radius:3px;background:var(--ro-accent)}.ro-link[data-active=true] i{display:block;animation:ro-transfer 1.8s linear infinite}.ro-bottom{display:flex;justify-content:space-between;gap:10px;font-size:9px;color:var(--ro-dim);margin-top:13px;padding-top:10px;border-top:1px solid var(--ro-line)}.ro-bottom>span:last-child{white-space:nowrap}.ro-detail{margin-top:9px;color:var(--ro-dim);font-size:10px}.ro-detail summary{cursor:pointer;width:fit-content}.ro-selected{color:var(--ro-text);font-size:12px;font-weight:500;margin:14px 0 5px}.ro-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 24px;margin:12px 0}.ro-facts div{min-width:0;border-bottom:1px solid var(--ro-line);padding-bottom:8px}.ro-facts dt{font-size:9px}.ro-facts dd{margin:5px 0 0;color:var(--ro-text);font:10px/1.6 var(--mono,Consolas,monospace);overflow-wrap:anywhere}.ro-limit{font-size:10px;margin:10px 0}.ro-motion:focus-visible,.ro-node:focus-visible,.ro-detail summary:focus-visible{outline:2px solid var(--ro-accent);outline-offset:3px}
+.ro-bbo{display:grid;grid-template-columns:1fr 1fr;gap:12px;border-top:1px solid var(--ro-line);margin-top:13px;padding-top:13px}.ro-bbo[hidden]{display:none}.ro-bbo>div{display:flex;align-items:baseline;gap:10px;min-width:0;padding:6px 0}.ro-bbo>div>span{font-size:10px;color:var(--ro-dim)}.ro-bbo b{font:19px var(--mono,Consolas,monospace);color:var(--bid,#60a5fa);font-variant-numeric:tabular-nums}.ro-bbo>div:nth-child(2) b{color:var(--ask,#f87171)}.ro-bbo small{font-size:10px;color:var(--ro-dim)}.ro-book-note{grid-column:1/-1;color:var(--ro-dim);font-size:10px;margin:0}.ro-changed{animation:ro-change .9s ease-out}
+.rithmic-observation[data-product=brain]{--ro-accent:var(--green,#65ffab);--ro-text:var(--text,#dce8df);--ro-dim:var(--muted,#8aa392);border-width:1px 0 0;border-radius:0;background:transparent;padding:13px 18px}.rithmic-observation[data-product=brain] .ro-node{gap:6px;padding:6px 4px}.rithmic-observation[data-product=brain] .ro-link{flex-basis:12px}.rithmic-observation[data-product=brain] .ro-node b{font-size:10px}.rithmic-observation[data-product=brain] .ro-node small{font-size:8px}.rithmic-observation[data-product=brain] .ro-heading h2{font-size:12px}.rithmic-observation[data-product=brain] .ro-facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+@keyframes ro-transfer{from{transform:translateX(0);opacity:0}20%,80%{opacity:.85}to{transform:translateX(20px);opacity:0}}@keyframes ro-connect{50%{opacity:.45}}@keyframes ro-recover{50%{transform:rotate(180deg);border-radius:2px}}@keyframes ro-change{from{background:color-mix(in srgb,var(--ro-accent) 18%,transparent)}to{background:transparent}}
+[data-motion=off] .ro-link i{display:none!important}[data-motion=off] .ro-node>i,[data-motion=off] .ro-changed{animation:none!important}
+[data-state=empty]>.ro-context>.ro-status,[data-state=unknown]>.ro-context>.ro-status,[data-state=unavailable]>.ro-context>.ro-status{color:var(--ro-dim)}
+@media(max-width:1050px){.ro-link{flex-basis:12px}.ro-node{gap:6px;padding:6px 4px}.ro-node b{font-size:10px}.ro-node small{font-size:8px}}
+@media(max-width:650px){.ro-flow{flex-wrap:wrap;row-gap:8px}.ro-node{flex:0 0 calc((100% - 24px)/3)}.ro-link{flex-basis:12px}.ro-link:nth-child(6){display:none}.ro-facts{grid-template-columns:repeat(2,minmax(0,1fr))}.ro-bottom{display:block}.ro-bottom>span{display:block;margin-bottom:4px}.ro-bbo>div{flex-wrap:wrap}.ro-heading{align-items:flex-start}.ro-motion{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.rithmic-observation *{animation:none!important;transition:none!important}.ro-link i{display:none!important}}
+/* ==========================================================================
+   QHOS DESIGN SYSTEM v1 — base comum as tres ferramentas (Brain, Micro, NAV)
+   Servido como /rithmic-observation.css (Brain) e /rithmic-observation/style.css
+   (Microstructure e NAV). O arquivo e identico nos tres produtos.
+   Nada aqui altera as regras .ro-* acima: somente acrescenta o vocabulario
+   comum de estados, tooltips acessiveis, foco e guarda de movimento.
+   ========================================================================== */
+:root{
+  /* --- superficies: cada produto mantem seu fundo; estes sao os degraus --- */
+  --qhos-surface-0:#070d0a;--qhos-surface-1:#0b1310;--qhos-surface-2:#101a15;
+  --qhos-surface-3:#16221c;
+  --qhos-line:rgba(255,255,255,.09);--qhos-line-strong:rgba(255,255,255,.16);
+  /* --- texto: os tres degraus abaixo passam 4.5:1 sobre --qhos-surface-1 --- */
+  /* razoes medidas sobre --qhos-surface-1 (#0b1310) por fe_a11y.py           */
+  --qhos-ink:#e8f2ed;          /* 16.05:1  corpo                             */
+  --qhos-ink-2:#b6c9bf;        /* 10.85:1  secundario                        */
+  --qhos-ink-3:#93a89e;        /*  7.48:1  terciario / rotulos               */
+  --qhos-ink-4:#7e948a;        /*  5.82:1  menor tinta de texto permitida    */
+  /* --- estados: cada tinta acima de 4.5:1 sobre surface-1 ----------------- */
+  --qhos-ok:#4ade80;           /* 10.81:1  pronto / conectado                */
+  --qhos-live:#5eead4;         /* 12.73:1  recebendo / processando           */
+  --qhos-warn:#fbbf24;         /* 11.28:1  antigo / recuperando              */
+  --qhos-bad:#fb7185;          /*  7.00:1  erro / desconectado               */
+  --qhos-idle:#93a89e;         /*  7.48:1  vazio / desconhecido / ocioso     */
+  --qhos-info:#7dd3fc;         /* 11.30:1  configurado / carregando          */
+  --qhos-lock:#c4b5fd;         /* 10.20:1  bloqueado / desabilitado          */
+  /* --- tipografia ------------------------------------------------------- */
+  --qhos-font:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --qhos-mono:'JetBrains Mono',ui-monospace,Consolas,'SF Mono',monospace;
+  --qhos-fs-micro:10px;--qhos-fs-label:11px;--qhos-fs-body:13px;
+  --qhos-fs-lead:15px;--qhos-fs-title:19px;--qhos-fs-display:28px;
+  --qhos-lh-tight:1.3;--qhos-lh-body:1.5;
+  /* --- espacamento (escala de 4) ---------------------------------------- */
+  --qhos-1:4px;--qhos-2:8px;--qhos-3:12px;--qhos-4:16px;--qhos-5:20px;
+  --qhos-6:24px;--qhos-8:32px;
+  /* --- bordas e foco ---------------------------------------------------- */
+  --qhos-r-sm:6px;--qhos-r-md:9px;--qhos-r-lg:14px;--qhos-r-pill:999px;
+  --qhos-focus:var(--mint,var(--green,#34d399));
+  --qhos-focus-w:2px;--qhos-focus-off:2px;
+  /* --- alvo minimo de toque (WCAG 2.2 AA) ------------------------------- */
+  --qhos-touch:24px;
+}
+
+/* ---------- foco visivel uniforme nas tres ferramentas -------------------- */
+.qhos-focusable:focus-visible,
+[data-qhos-tip]:focus-visible,
+.qhos-state[tabindex]:focus-visible{
+  outline:var(--qhos-focus-w) solid var(--qhos-focus);
+  outline-offset:var(--qhos-focus-off);border-radius:var(--qhos-r-sm);
+}
+
+/* ==========================================================================
+   VOCABULARIO DE ESTADOS
+   Um estado nunca e comunicado so pela cor: cada um carrega glifo + texto.
+   Use data-qhos-state="<chave>" em .qhos-state.
+   chaves: loading configured connecting idle receiving processing recovering
+           ready stale empty unavailable disconnected error disabled blocked
+           unknown
+   ========================================================================== */
+.qhos-state{
+  display:inline-flex;align-items:center;gap:var(--qhos-1);min-width:0;
+  font:500 var(--qhos-fs-micro)/1.35 var(--qhos-font);letter-spacing:.2px;
+  padding:3px 8px 3px 6px;border-radius:var(--qhos-r-pill);
+  border:1px solid color-mix(in srgb,var(--qhos-tone,var(--qhos-idle)) 32%,transparent);
+  background:color-mix(in srgb,var(--qhos-tone,var(--qhos-idle)) 11%,transparent);
+  color:var(--qhos-tone,var(--qhos-idle));
+  white-space:nowrap;vertical-align:middle;
+}
+.qhos-state>.qhos-glyph{
+  /* largura automatica: glifos como U+26D4 sao mais largos que 11px e eram
+     recortados quando a caixa era fixa. */
+  flex:0 0 auto;min-width:11px;height:auto;line-height:1;
+  display:inline-grid;place-items:center;overflow:visible;
+  font:700 10px/1.1 var(--qhos-mono);
+}
+.qhos-state>.qhos-label{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.qhos-state>time,.qhos-state>.qhos-age{
+  color:var(--qhos-ink-3);font:var(--qhos-fs-micro)/1 var(--qhos-mono);
+  font-variant-numeric:tabular-nums;
+}
+.qhos-state[data-qhos-state=loading]    {--qhos-tone:var(--qhos-info)}
+.qhos-state[data-qhos-state=configured] {--qhos-tone:var(--qhos-info)}
+.qhos-state[data-qhos-state=connecting] {--qhos-tone:var(--qhos-info)}
+.qhos-state[data-qhos-state=idle]       {--qhos-tone:var(--qhos-ok)}
+.qhos-state[data-qhos-state=receiving]  {--qhos-tone:var(--qhos-live)}
+.qhos-state[data-qhos-state=processing] {--qhos-tone:var(--qhos-live)}
+.qhos-state[data-qhos-state=recovering] {--qhos-tone:var(--qhos-warn)}
+.qhos-state[data-qhos-state=ready]      {--qhos-tone:var(--qhos-ok)}
+.qhos-state[data-qhos-state=stale]      {--qhos-tone:var(--qhos-warn)}
+.qhos-state[data-qhos-state=empty]      {--qhos-tone:var(--qhos-idle)}
+.qhos-state[data-qhos-state=unavailable]{--qhos-tone:var(--qhos-idle)}
+.qhos-state[data-qhos-state=disconnected]{--qhos-tone:var(--qhos-bad)}
+.qhos-state[data-qhos-state=error]      {--qhos-tone:var(--qhos-bad)}
+.qhos-state[data-qhos-state=disabled]   {--qhos-tone:var(--qhos-lock)}
+.qhos-state[data-qhos-state=blocked]    {--qhos-tone:var(--qhos-lock)}
+.qhos-state[data-qhos-state=unknown]    {--qhos-tone:var(--qhos-idle)}
+/* variante discreta para uso dentro de tabelas e listas densas */
+.qhos-state.qhos-state--bare{background:none;border-color:transparent;padding:0 2px}
+/* variante de bloco, para cabecalhos de painel */
+.qhos-state.qhos-state--block{
+  display:flex;width:100%;white-space:normal;align-items:flex-start;
+  padding:var(--qhos-2) var(--qhos-3);border-radius:var(--qhos-r-md);
+  font-size:var(--qhos-fs-label);line-height:var(--qhos-lh-body);
+}
+.qhos-state.qhos-state--block>.qhos-label{white-space:normal;overflow:visible}
+
+/* linha explicativa que acompanha o estado (motivo tecnico) */
+.qhos-reason{
+  display:block;margin-top:var(--qhos-1);
+  font:var(--qhos-fs-micro)/1.5 var(--qhos-font);color:var(--qhos-ink-3);
+  overflow-wrap:anywhere;
+}
+.qhos-reason code,.qhos-reason .qhos-code{
+  font:var(--qhos-fs-micro)/1.4 var(--qhos-mono);color:var(--qhos-ink-2);
+}
+
+/* ---------- selo de proveniencia: fixture / captura / ambiente de teste --- */
+.qhos-origin{
+  display:inline-flex;align-items:center;gap:var(--qhos-1);
+  font:600 9px/1.3 var(--qhos-mono);letter-spacing:.9px;text-transform:uppercase;
+  padding:3px 7px;border-radius:var(--qhos-r-sm);white-space:nowrap;
+  border:1px dashed color-mix(in srgb,var(--qhos-tone,var(--qhos-idle)) 45%,transparent);
+  background:color-mix(in srgb,var(--qhos-tone,var(--qhos-idle)) 9%,transparent);
+  color:var(--qhos-tone,var(--qhos-idle));
+}
+.qhos-origin[data-qhos-origin=fixture]      {--qhos-tone:var(--qhos-lock)}
+.qhos-origin[data-qhos-origin=vendor_test]  {--qhos-tone:var(--qhos-warn)}
+.qhos-origin[data-qhos-origin=historical]   {--qhos-tone:var(--qhos-warn)}
+.qhos-origin[data-qhos-origin=replay]       {--qhos-tone:var(--qhos-info)}
+.qhos-origin[data-qhos-origin=none]         {--qhos-tone:var(--qhos-idle)}
+.qhos-origin[data-qhos-origin=unknown]      {--qhos-tone:var(--qhos-idle)}
+.qhos-origin[data-qhos-origin=production]   {--qhos-tone:var(--qhos-ok);border-style:solid}
+
+/* ---------- ausencia: nunca zero no lugar de "nao existe" ---------------- */
+.qhos-absent{color:var(--qhos-ink-4);font-style:normal;font-weight:400}
+/* o texto da ausencia e escrito por QHOSUI.pintaValor; nao ha pseudo-elemento
+   para nao duplicar o travessao quando o proprio valor ja e '—'. */
+.qhos-absent>.qhos-absent-why{font-size:var(--qhos-fs-micro);color:var(--qhos-ink-4)}
+.kpi .val.qhos-absent{font-size:clamp(15px,3.2vw,21px);letter-spacing:0}
+
+/* ---------- idade do dado ------------------------------------------------ */
+.qhos-age{font:var(--qhos-fs-micro)/1 var(--qhos-mono);font-variant-numeric:tabular-nums}
+.qhos-age[data-qhos-fresh=no]{color:var(--qhos-warn)}
+.qhos-age[data-qhos-fresh=yes]{color:var(--qhos-ink-3)}
+.qhos-age[data-qhos-fresh=unknown]{color:var(--qhos-ink-4)}
+
+/* ==========================================================================
+   TOOLTIP ACESSIVEL
+   Substitui tooltips só-hover (::after em data-tip / title). O gatilho e um
+   botao real: recebe foco, abre por teclado e por toque, fecha com Esc.
+   ========================================================================== */
+button.qhos-tip-trigger{
+  all:unset;box-sizing:border-box;display:inline-grid;place-items:center;
+  min-width:var(--qhos-touch);min-height:var(--qhos-touch);
+  cursor:help;color:var(--qhos-ink-3);vertical-align:middle;
+}
+button.qhos-tip-trigger>span{
+  display:grid;place-items:center;width:15px;height:15px;border-radius:50%;
+  border:1px solid var(--qhos-line-strong);font:600 10px/1 var(--qhos-font);
+}
+button.qhos-tip-trigger:hover>span,
+button.qhos-tip-trigger[aria-expanded=true]>span{
+  color:var(--qhos-focus);border-color:color-mix(in srgb,var(--qhos-focus) 55%,transparent);
+}
+button.qhos-tip-trigger:focus-visible{
+  outline:var(--qhos-focus-w) solid var(--qhos-focus);outline-offset:1px;border-radius:50%;
+}
+.qhos-tip-bubble{
+  position:fixed;z-index:9999;max-width:min(300px,calc(100vw - 24px));
+  background:var(--qhos-surface-3);color:var(--qhos-ink);
+  border:1px solid var(--qhos-line-strong);border-radius:var(--qhos-r-md);
+  padding:var(--qhos-2) var(--qhos-3);
+  font:400 var(--qhos-fs-label)/1.5 var(--qhos-font);
+  box-shadow:0 10px 30px rgba(0,0,0,.55);overflow-wrap:anywhere;
+}
+.qhos-tip-bubble[hidden]{display:none}
+
+/* ==========================================================================
+   CARREGAMENTO
+   O esqueleto nunca imita um valor: e uma barra neutra rotulada por aria.
+   ========================================================================== */
+.qhos-skeleton{
+  display:block;border-radius:var(--qhos-r-sm);
+  background:linear-gradient(90deg,
+    color-mix(in srgb,var(--qhos-ink-4) 12%,transparent) 0%,
+    color-mix(in srgb,var(--qhos-ink-4) 22%,transparent) 50%,
+    color-mix(in srgb,var(--qhos-ink-4) 12%,transparent) 100%);
+  background-size:200% 100%;animation:qhos-shimmer 1.4s linear infinite;
+  min-height:12px;
+}
+@keyframes qhos-shimmer{from{background-position:200% 0}to{background-position:-200% 0}}
+
+/* ==========================================================================
+   GUARDA DE MOVIMENTO
+   Regra 7/8: animacao so quando ha atividade observada. O atributo
+   data-qhos-motion="off" no <html> e escrito pelo helper compartilhado
+   (prefers-reduced-motion ou pausa manual) e desliga TODA animacao infinita.
+   ========================================================================== */
+html[data-qhos-motion=off] *,
+html[data-qhos-motion=off] *::before,
+html[data-qhos-motion=off] *::after{
+  animation-duration:0s!important;animation-iteration-count:1!important;
+  transition-duration:0s!important;scroll-behavior:auto!important;
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:0s!important;animation-iteration-count:1!important;
+    transition-duration:0s!important;scroll-behavior:auto!important;
+  }
+}
+
+/* ---------- utilitario de leitura para telas estreitas ------------------- */
+.qhos-scroll-x{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.qhos-sr-only{
+  position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+  clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;
+}
+
+/* ---------- alvos de toque do componente de observacao -------------------
+   O <summary> media 162x15 nos tres produtos. -------------------------- */
+.rithmic-observation .ro-detail summary{
+  min-height:var(--qhos-touch);display:flex;align-items:center;width:fit-content;
+}
+.rithmic-observation .ro-motion{min-height:var(--qhos-touch)}
+/* qualquer <summary> das tres ferramentas: o gatilho de um bloco recolhivel
+   e um alvo de toque como outro qualquer. */
+details>summary{min-height:var(--qhos-touch)}
+
+/* ---------- idade do dado na linha de contexto da observacao ------------- */
+.rithmic-observation .qhos-ro-age{
+  font:10px/1.3 var(--qhos-mono);font-variant-numeric:tabular-nums;
+  padding:2px 7px;border-radius:var(--qhos-r-pill);white-space:nowrap;
+  border:1px solid color-mix(in srgb,var(--qhos-tone,var(--qhos-idle)) 30%,transparent);
+  background:color-mix(in srgb,var(--qhos-tone,var(--qhos-idle)) 10%,transparent);
+  color:var(--qhos-tone,var(--qhos-idle));
+}
+.rithmic-observation .qhos-ro-age[data-qhos-fresh=no]     {--qhos-tone:var(--qhos-warn)}
+.rithmic-observation .qhos-ro-age[data-qhos-fresh=yes]    {--qhos-tone:var(--qhos-ok)}
+.rithmic-observation .qhos-ro-age[data-qhos-fresh=unknown]{--qhos-tone:var(--qhos-idle)}
+@media(max-width:650px){
+  .rithmic-observation .qhos-ro-age{white-space:normal}
+}
+
+/* --- Etapa 8: linha da regra que decidiu o estado ------------------------ */
+.ro-context .ro-status.qhos-state{display:inline-flex;align-items:center;gap:6px}
+.ro-regra{display:block;flex-basis:100%;margin-top:2px;font:10.5px/1.5 var(--qhos-mono,ui-monospace,Consolas,monospace);
+  color:var(--qhos-ink-3,#a9bcb3);overflow-wrap:anywhere}
+.ro-regra:empty{display:none}
+
+/* E8-06: BBO historico nunca pode parecer o topo de livro atual */
+.ro-bbo[data-qhos-historico="1"]>div{border-style:dashed;opacity:.82}
+.ro-bbo[data-qhos-historico="1"] .ro-book-note{color:var(--amber,#fbbf24)}
+
+/* E8-07: livro DBO de teste — sempre com a marca de dado de teste */
+.ro-dbo{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:8px 0 2px;padding:6px 0 0;
+  border-top:1px dashed var(--qhos-line,#2b3a35);font:10.5px/1.5 var(--qhos-mono,ui-monospace,Consolas,monospace);
+  color:var(--qhos-ink-3,#a9bcb3)}
+.ro-dbo[hidden]{display:none}
+.ro-dbo-titulo{letter-spacing:.6px;font-size:9.5px}
+.ro-dbo-nota{flex-basis:100%;overflow-wrap:anywhere}

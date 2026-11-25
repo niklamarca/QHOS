@@ -1,0 +1,34 @@
+[Unit]
+Description=QHOS V2 Brain de observacao e pesquisa
+After=network.target qhos2-coletor.service
+StartLimitIntervalSec=60
+StartLimitBurst=3
+
+[Service]
+Type=simple
+WorkingDirectory=%h/qhos-v2
+Environment=QHOS2_DATA_ROOT=%h/qhos-v2-data
+Environment=BRAIN_QUANT_OBSERVE_URL=http://127.0.0.1:8766
+Environment=BRAIN_QUANT_WS_ENABLED=false
+Environment=BRAIN_REGRESSION_PROFILE=qhos2-operational-v1
+Environment=BRAIN_CAN_RELIGHT_QUANT=false
+Environment=BRAIN_AUTO_RELIGHT_QUANT=false
+Environment=BRAIN_VOICE_ENABLED=false
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=%h/qhos-v2/.venv/bin/python -m brain_service
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=%h/qhos-v2-data
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+MemoryMax=2G
+TasksMax=128
+TimeoutStopSec=45
+
+[Install]
+WantedBy=default.target

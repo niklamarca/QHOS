@@ -1,0 +1,54 @@
+# segredos
+.env
+*.key
+*.pem
+
+# arquivo local do autor (e-mails da Rithmic, contratos, SDK, plano): fica so nesta maquina, nunca no GitHub
+/arquivo_local/
+
+# dados e estado (grandes, reproduziveis)
+data_lake/
+logs/
+*.duckdb
+*.db
+*.db.wal
+*.parquet
+*.pt
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# atalho gerado no Windows (caminho absoluto desta maquina)
+*.lnk
+*.bak
+*.backup*
+*legacy*
+
+# secrets - NUNCA commitar
+.env
+.env.*
+!.env.example
+secrets.json
+credentials.json
+**/secrets.json
+**/*credentials*
+
+# snapshots de seguranca gerados antes de patches no dashboard
+dashboard/_hybrid.before_*.html
+
+# pacotes e arquivos da Rithmic / e-mails / empacotados: nunca vao ao GitHub (licenca, privacidade)
+# (os .proto e o manifest.json de vendor/rithmic/ ja versionados continuam rastreados)
+vendor/rithmic/**/*.zip
+*.zip
+*.eml
+*.bundle
+*.tgz
+*.tar
+*.tar.gz
+
+# capturas de mercado: dado licenciado, nunca versionar
+market_frames.jsonl
+rithmic_paper_protocol/

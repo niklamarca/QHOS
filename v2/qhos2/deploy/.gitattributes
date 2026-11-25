@@ -1,0 +1,4 @@
+# Units e instalador sao lidos pelo systemd e pelo bash do WSL: LF sempre, mesmo num checkout Windows com autocrlf
+# (QHOS-AUD-002: deploy/qhos2-coletor.service estava com CRLF no indice).
+*.service text eol=lf
+install.sh text eol=lf

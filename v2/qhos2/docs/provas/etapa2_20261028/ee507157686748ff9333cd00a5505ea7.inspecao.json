@@ -1,0 +1,113 @@
+{
+  "ambiente": "paper",
+  "atualizacoes": {
+    "entradas": 0,
+    "lados": {},
+    "listas": {
+      "depth_order_priority": {
+        "com": 0,
+        "sem": 0
+      },
+      "depth_price": {
+        "com": 0,
+        "sem": 0
+      },
+      "depth_size": {
+        "com": 0,
+        "sem": 0
+      },
+      "exchange_order_id": {
+        "com": 0,
+        "sem": 0
+      },
+      "transaction_type": {
+        "com": 0,
+        "sem": 0
+      },
+      "update_type": {
+        "com": 0,
+        "sem": 0
+      }
+    },
+    "maior_quadro": 0,
+    "por_quadro": {},
+    "preenchidos": {
+      "depth_order_priority": 0,
+      "exchange_order_id": 0,
+      "prev_depth_price": 0
+    },
+    "quadros_desalinhados": 0,
+    "tipos": {}
+  },
+  "bolsa": "CME",
+  "captura_id": "ee507157686748ff9333cd00a5505ea7",
+  "ciclo": {
+    "depois_do_retrato": {},
+    "durante_retrato": {}
+  },
+  "com_carimbo": {
+    "150": 1
+  },
+  "esquema": "qhos2.inspecao.v1",
+  "invalidos": {},
+  "negocios": {
+    "agressor": {
+      "compra": 1
+    },
+    "agressor_visto": 0,
+    "agressor_vivo": 0,
+    "id_agressor": 0,
+    "id_passivo": 0,
+    "passivo_visto": 0,
+    "passivo_vivo": 0,
+    "quadros": 1,
+    "retrato": 1,
+    "sem_preco": 0
+  },
+  "ordens_vivas_no_fim": 6563,
+  "quadros": {
+    "116": 1266,
+    "150": 1
+  },
+  "retrato": {
+    "apos_o_fim": 0,
+    "fim_visto": true,
+    "ids_duplicados": 0,
+    "ids_vazios": 0,
+    "lados": {
+      "compra": 566,
+      "venda": 699
+    },
+    "niveis": 1265,
+    "ordens": 6563,
+    "recusado": false
+  },
+  "sequencia": {
+    "116": {
+      "com": 0,
+      "passos": {},
+      "sem": 1266
+    },
+    "150": {
+      "com": 0,
+      "passos": {},
+      "sem": 1
+    },
+    "160": {
+      "com": 0,
+      "passos": {},
+      "sem": 0
+    },
+    "161": {
+      "com": 0,
+      "passos": {},
+      "sem": 0
+    },
+    "mercado": {
+      "com": 0,
+      "passos": {},
+      "sem": 0
+    }
+  },
+  "simbolo": "ESZ6"
+}

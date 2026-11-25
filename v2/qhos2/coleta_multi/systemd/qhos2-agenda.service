@@ -1,0 +1,37 @@
+[Unit]
+Description=QHOS V2 agendador da captura do ES (sobe no boot; senha pela credencial do systemd)
+After=network-online.target
+Wants=network-online.target
+ConditionPathExists=%h/.config/qhos2/rithmic-paper.cred
+StartLimitIntervalSec=3600
+StartLimitBurst=3
+
+[Service]
+Type=simple
+WorkingDirectory=%h/qhos-v2
+Environment=QHOS2_DATA_ROOT=%h/qhos-v2-data
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+# So o lancador vem do clone da coleta; o qhos2 importado e o instalado em ~/qhos-v2/.venv (codigo congelado).
+Environment=PYTHONPATH=%h/qhos-coleta/qhos2
+LoadCredential=rithmic-paper:%h/.config/qhos2/rithmic-paper.cred
+# Calendario sem prazo e contrato do ES pela rolagem, gerados a cada partida (coleta_multi.calendario_continuo).
+ExecStart=%h/qhos-v2/.venv/bin/python -m coleta_multi.servico agenda-continuo
+# Calendario esgotado (saida 0, vespera da rolagem do ES): religa com o calendario e o contrato seguintes.
+# 2 = recusado antes do login (lock, guarda em quarentena, credencial); 3 = login recusado ou logout forcado (R6).
+Restart=always
+RestartSec=120
+RestartPreventExitStatus=2 3
+# SIGTERM: o agendador cancela a assinatura e faz logout antes de sair.
+KillMode=mixed
+TimeoutStopSec=90
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=%h/qhos-v2-data %h/.local/state/qhos2
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+
+[Install]
+WantedBy=default.target

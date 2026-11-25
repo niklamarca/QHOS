@@ -1,0 +1,33 @@
+# segredos
+.env
+*.key
+*.pem
+
+# dados e estado (grandes, reproduziveis)
+data_lake/
+logs/
+*.duckdb
+*.db
+*.db.wal
+*.parquet
+*.pt
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# backups e legados
+*.bak
+*.backup*
+*legacy*
+
+# secrets - NUNCA commitar
+.env
+.env.*
+!.env.example
+secrets.json
+credentials.json
+**/secrets.json
+**/*credentials*

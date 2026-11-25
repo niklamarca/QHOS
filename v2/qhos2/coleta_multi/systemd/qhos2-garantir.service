@@ -1,0 +1,18 @@
+[Unit]
+Description=QHOS V2 garante agendador, coletor e vigia ligados (no-op se ja estiverem) e abre a pasta selada na data
+
+[Service]
+Type=oneshot
+Environment=QHOS2_DATA_ROOT=%h/qhos-v2-data
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=PYTHONPATH=%h/qhos-coleta/qhos2/src:%h/qhos-coleta/qhos2
+WorkingDirectory=%h/qhos-coleta/qhos2
+# A partir de 21/11/2026 (sabado), os pregoes de 9 a 20/11 vao da pasta selada para DataSet\<dia>\ (no-op antes).
+# O "-" faz uma falha aqui nao impedir a linha de baixo.
+ExecStart=-%h/qhos-coleta-venv/bin/python -m coleta_multi.liberar_selados
+# O ES volta sozinho: depois de queda ou reinicio (nunca de login recusado, nunca com captura viva) a guarda do ES
+# e liberada antes do pregao do dia, com o liberar() do codigo congelado.
+ExecStart=-%h/qhos-coleta-venv/bin/python -m coleta_multi.guarda_es
+# Seguro por construcao: o lock de cada processo impede duplicata (sai 2 antes do login), a guarda em quarentena
+# impede novo login depois de login recusado ou logout forcado, e a vigia pula se o laco do tmux estiver vivo.
+ExecStart=/usr/bin/systemctl --user start qhos2-agenda.service qhos2-coleta-multi.service qhos2-vigia.service

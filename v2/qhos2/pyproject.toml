@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools==80.9.0", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qhos2"
+version = "0.2.6"
+description = "QHOS V2 - nucleo minimo, reconstruido peca por peca"
+requires-python = ">=3.10"
+dependencies = ["websockets==15.0.1"]  # captura e servidor do terminal; versao exercitada nos testes
+
+[project.optional-dependencies]
+brain = ["fastapi==0.162.0", "uvicorn==0.54.0", "psutil==7.2.2", "httpx==0.28.1", "pytest==8.3.5"]
+
+[project.scripts]
+qhos2-captura = "qhos2.captura:main"
+qhos2-agenda = "qhos2.agenda:main"
+qhos2-coletor = "qhos2.coletor:main"
+qhos2-inspecao = "qhos2.inspecao:main"
+qhos2-avaliador = "qhos2.avaliador:main"
+qhos2-brain = "brain_service.__main__:main"
+qhos2-diagnostico = "qhos2.diagnostico:main"
+qhos2-operacao = "qhos2.operacao:main"
+
+[tool.setuptools]
+packages = ["qhos2", "qhos2.terminal", "qhos2.laboratorio", "brain", "brain.discovery", "brain.fable", "brain.strategies", "brain_service", "voice_service"]
+package-dir = {"" = "src", "qhos2.terminal" = "terminal"}
+include-package-data = false
+
+[tool.setuptools.package-data]
+"qhos2.terminal" = ["index.html", "modulos/*.js", "LEIA.md"]
+"qhos2" = ["tests/*.py"]
+"brain" = ["docs/*.md", "docs/*.json"]
+"brain_service" = ["ui/*.html", "ui/*.js", "ui/*.css"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"

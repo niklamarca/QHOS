@@ -1,0 +1,138 @@
+{
+  "ambiente": "paper",
+  "atualizacoes": {
+    "entradas": 21843,
+    "lados": {
+      "compra": 11424,
+      "venda": 10419
+    },
+    "listas": {
+      "depth_order_priority": {
+        "com": 20612,
+        "sem": 0
+      },
+      "depth_price": {
+        "com": 20612,
+        "sem": 0
+      },
+      "depth_size": {
+        "com": 20612,
+        "sem": 0
+      },
+      "exchange_order_id": {
+        "com": 20612,
+        "sem": 0
+      },
+      "transaction_type": {
+        "com": 20612,
+        "sem": 0
+      },
+      "update_type": {
+        "com": 20612,
+        "sem": 0
+      }
+    },
+    "maior_quadro": 34,
+    "por_quadro": {
+      "1": 20216,
+      "2-5": 320,
+      "6+": 76
+    },
+    "preenchidos": {
+      "depth_order_priority": 21843,
+      "exchange_order_id": 21843,
+      "prev_depth_price": 21843
+    },
+    "quadros_desalinhados": 0,
+    "tipos": {
+      "CHANGE": 2556,
+      "DELETE": 9367,
+      "NEW": 9920
+    }
+  },
+  "bolsa": "CME",
+  "captura_id": "e694658715f64e10908897d8407b740b",
+  "ciclo": {
+    "depois_do_retrato": {
+      "alteracao": 2556,
+      "alteracao_mantem_prioridade": 344,
+      "alteracao_muda_preco": 2171,
+      "alteracao_muda_prioridade": 2212,
+      "novo": 9918,
+      "remocao": 9363
+    },
+    "durante_retrato": {
+      "novo": 2,
+      "remocao_desconhecida": 4
+    }
+  },
+  "com_carimbo": {
+    "150": 2858,
+    "160": 20612
+  },
+  "esquema": "qhos2.inspecao.v1",
+  "invalidos": {},
+  "negocios": {
+    "agressor": {
+      "ausente": 853,
+      "compra": 1060,
+      "venda": 945
+    },
+    "agressor_visto": 43,
+    "agressor_vivo": 43,
+    "id_agressor": 2004,
+    "id_passivo": 2004,
+    "passivo_visto": 2004,
+    "passivo_vivo": 2004,
+    "quadros": 2858,
+    "retrato": 1,
+    "sem_preco": 853
+  },
+  "ordens_vivas_no_fim": 8476,
+  "quadros": {
+    "116": 1290,
+    "150": 2858,
+    "160": 20612
+  },
+  "retrato": {
+    "apos_o_fim": 0,
+    "fim_visto": true,
+    "ids_duplicados": 2,
+    "ids_vazios": 0,
+    "lados": {
+      "compra": 588,
+      "venda": 701
+    },
+    "niveis": 1289,
+    "ordens": 7921,
+    "recusado": false
+  },
+  "sequencia": {
+    "116": {
+      "com": 0,
+      "passos": {},
+      "sem": 1290
+    },
+    "150": {
+      "com": 0,
+      "passos": {},
+      "sem": 2858
+    },
+    "160": {
+      "com": 0,
+      "passos": {},
+      "sem": 20612
+    },
+    "161": {
+      "com": 0,
+      "passos": {},
+      "sem": 0
+    },
+    "mercado": {
+      "com": 0,
+      "passos": {},
+      "sem": 20612
+    }
+  },
+  "simbolo": "ESZ6"
+}

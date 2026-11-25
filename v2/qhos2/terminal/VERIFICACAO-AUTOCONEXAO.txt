@@ -1,0 +1,179 @@
+QHOS V2 — CONEXÃO AUTOMÁTICA E LUZES DO TERMINAL
+
+Tarefa: conectar e reconectar o terminal servido pelo coletor, atendendo à
+tarefa 8 da seção 4.1 (o terminal deixa de depender do V1) e à extensão da
+tarefa 9 (percurso e luzes).
+
+BASE E ENTREGA
+
+Base obrigatória, conferida antes das alterações:
+8e98e87322ad147becd0e75e8825f720b7db20db4b056f524862b6ed66fbafc5
+Branch v2, HEAD 5aa3b7e; mesma base do commit 681d15a.
+
+index.html final, aplicado em qhos2/terminal/index.html:
+a33e3ba78328664a5f6e539701bffee0239aca55d8ac2f767f2b8e8f17841feb
+
+Origem automática autorizada pelo usuário: http://127.0.0.1:8766.
+Outras portas, localhost, outros hosts, HTTPS e arquivo local mantêm somente
+o fluxo manual. O terminal não consulta /conexao nessas origens.
+
+O HTML continua único, com 16 módulos base64 no importmap. Somente app.js,
+qhos-bridge.js e contract-ui.js mudaram. Os outros 13 módulos são byte a byte
+idênticos à base. Os módulos legíveis de modulos/ foram regerados pelo extrator.
+Os hashes completos e seus 16 primeiros caracteres estão em SHA256.txt.
+
+Não foram alterados captura, sessão, conector, coletor ou o dashboard V1.
+O coletor precisa fornecer GET /conexao conforme o contrato combinado; a
+implementação desse endpoint pertence à outra tarefa/pessoa. Não conectamos
+os testes ao coletor real nem reiniciamos o serviço.
+
+MUDANÇAS POR ARQUIVO E FUNÇÃO
+
+app.js
+- createCollectorAutoConnection: descoberta relativa /conexao, restrita à
+  origem autorizada; token com 43 caracteres; URL descoberta limitada ao WS
+  da mesma origem; rejeição de redirecionamentos e resposta de outra origem.
+- start/attempt: inicia no load/F5 quando a fonte salva é Rithmic ou ausente.
+  Uma tentativa por vez; espera a ponte concluir sua própria reconexão.
+- onStatus/schedule: depois de falha sem tentativa interna, busca credenciais
+  novamente com intervalo de 10 segundos. Assim aceita rotação do token.
+- manualDisconnect/setSource/manualConnect: cancelam respostas automáticas
+  pendentes quando o usuário desconecta, escolhe Coinbase ou assume a conexão
+  manual. Uma resposta atrasada não pode mudar a fonte de volta para Rithmic.
+- visibilityChanged: depois de cinco minutos oculto, suspende novas tentativas
+  externas e aborta a descoberta pendente; retoma ao voltar. Não interrompe uma
+  conexão saudável nem a reconexão já em andamento dentro da ponte.
+- contractManager.connect/disconnect: o automático usa o mesmo caminho manual.
+  As credenciais transitórias são apagadas assim que a ponte copia o token.
+- contractState: informa apenas o estado público do automático à interface.
+- collectorLinkLight/collectorLayerLights e apresentação: sete luzes com texto,
+  motivo, UTC, foco, tooltip e aria-label. A faixa tem role=status.
+- statusLabel/renderStatus: mostram “Conectando ao coletor” durante a tentativa
+  e atualizam a faixa. Notificações automáticas repetidas são deduplicadas.
+- inicialização e temporizador de 60 s: aguardam a descoberta automática, sem
+  buscar dados Coinbase enquanto essa tentativa estiver pendente.
+
+qhos-bridge.js
+- freshStatus/openSocket/commitSelection/terminalError/disconnect: acrescentam
+  somente o booleano retrying ao estado público da ponte.
+- lostConnection: agenda a repetição antes de emitir o estado offline. retrying
+  fica verdadeiro também durante a espera; volta a falso na confirmação, erro,
+  desistência e desconexão. A sequência 1, 2, 4, 8 e 15 segundos foi preservada.
+- Validadores de endereço, welcome, dados e pipeline foram preservados.
+
+contract-ui.js
+- updateConnection: distingue tentativa ativa, espera entre tentativas e
+  conexão confirmada. 404/indisponibilidade aparecem como texto neutro no painel.
+  O formulário manual permanece disponível entre as tentativas automáticas.
+- connectCollector e seus campos continuam funcionando como na base.
+  O automático nunca preenche #qhosAccessToken.
+
+HTML/CSS
+- Faixa de sete luzes acima do rodapé, sempre visível na tela principal.
+- Os três botões de ordem desativados ficam esmaecidos, com cores neutras e
+  cursor not-allowed. A condição disabled e a dica de cada botão não mudaram.
+- Removidos os links de fontes Google que a base carregava externamente.
+  A página usa as fontes locais de reserva. Não há script src, importação de
+  módulo externo ou dependência externa de CSS/fontes. Os endpoints de dados
+  Coinbase já existentes nos módulos preservados continuam funcionando.
+
+CORES E ESTADOS
+
+Terminal↔Coletor:
+- Verde: conectado, assinatura confirmada, waiting/live/stale.
+- Amarelo: tentativa inicial, espera/reconexão interna ou laço automático.
+- Vermelho: error ou desconectado sem tentativa prevista.
+- Cinza: nunca conectou ou houve desconexão voluntária.
+- Exibe o contador reconnects da própria ponte.
+
+Camadas:
+- Seis camadas, na ordem recebida do coletor; ausentes ficam desconhecidas.
+- OK verde, Atenção amarelo, Falha vermelho, Desconhecido cinza.
+- Sem conexão ou há mais de cinco segundos sem percurso: todas cinza.
+- Motivo e since do coletor são texto, com escape ou textContent. Quando antigos,
+  o tooltip identifica que se trata do último motivo recebido.
+
+REGRAS PRESERVADAS
+
+microstructure-ui.js permanece inteiro byte a byte igual: esBloqueado,
+ES_LIBERADO_EM e renderRithmicPath não foram alterados.
+validateBridgeURL continua aceitando ws:// somente em 127.0.0.1 com porta;
+wss:// segue disponível para conexão manual nos demais endereços admitidos.
+Não mudaram ordens, paper trading, NAV ou a regra de desligar o simulador Rithmic.
+Nenhum token é salvo, inserido no DOM/URL, preenchido em campo, registrado em
+console/log ou incluído em mensagens automáticas. Erros brutos da descoberta
+são substituídos por mensagem genérica; a redação manual existente foi mantida.
+
+ERROS ENCONTRADOS, CONSEQUÊNCIAS E CORREÇÕES
+
+1. A ponte emitia offline antes de agendar a própria reconexão.
+   Consequência: um consumidor externo poderia interpretar a espera como
+   desistência, mostrar vermelho e iniciar uma tentativa concorrente.
+   Correção: agendamento anterior à emissão e indicador retrying consistente.
+
+2. O timer antigo de 60 s ainda chamava loadChart(true) durante /conexao 404
+   com nenhuma fonte salva.
+   Consequência: candles BTC poderiam surgir enquanto o terminal aguardava o
+   coletor, apesar do bloqueio na inicialização.
+   Correção: o mesmo bloqueio automático foi aplicado ao timer. Verificado
+   por 61 segundos reais, sem nenhum pedido de candles Coinbase, e por mutação.
+
+VALIDAÇÃO EXECUTADA
+
+- 91/91 testes passaram diretamente no HTML final a33e3ba78328664a.
+- 35 mutações deliberadas foram detectadas, inclusive origem incorreta,
+  remoção do bloqueio de Coinbase, interrupção da reconexão interna, retenção
+  de credencial, cores de cada estado e aparência dos botões desativados.
+- python3 extrair_modulos.py --conferir: OK, 16 módulos.
+- 27/27 verificações no Chrome; nenhum erro JavaScript capturado.
+- Servidor falso HTTP+WebSocket realmente caiu e voltou, com o mesmo token e
+  com token novo. Quatro auditorias verificaram ausência do token em DOM,
+  valores dos campos, local/sessionStorage, IndexedDB, cookies, URL, título,
+  console e erros. Tokens de teste foram gerados apenas em memória.
+
+Limite preciso da evidência de navegador: foi usada a origem isolada 18025,
+sem interferir no coletor real 8766. A revisão comparou o HTML testado
+bdf3ea15e98f9208 com o final a33e3ba78328664a: a única diferença é a constante
+COLLECTOR_AUTO_ORIGIN, 18025 no teste e 8766 na entrega. Os outros módulos e
+todo o markup/CSS são iguais. A configuração final 8766 tem testes próprios
+que recusam as demais origens e detectam sua alteração deliberada.
+
+COMO VERIFICAR
+
+Na pasta extraída do pacote:
+    python3 extrair_modulos.py --conferir
+    node tests/run-all.mjs
+
+No Windows, se python3 não estiver cadastrado, use python no primeiro comando.
+Os testes usam somente Node.js e a biblioteca padrão; nenhuma instalação nova.
+O runner lê index.html, valida a base em fixtures/base-index.html e grava
+resumos sem credenciais em tests/run-all-results.json e *.summary.json.
+
+Verificação manual no terminal servido pelo coletor, em 8766:
+1. Com fonte Rithmic salva ou nenhuma preferência, abra e depois use F5:
+   deve conectar sem colar token; o campo de token continua vazio.
+2. Faça /conexao responder 404: mensagem neutra, restante da tela utilizável.
+3. Reinicie o coletor com o mesmo token e depois com token novo: deve voltar.
+4. Escolha Coinbase e use F5: nenhuma descoberta nem troca automática da fonte.
+5. Desconecte manualmente: a luz fica cinza e não há repetição automática.
+6. Observe as luzes e foque cada uma: texto, motivo e since; queda ou percurso
+   parado por mais de cinco segundos deixa as seis camadas cinza.
+7. No ES, confira que os botões de ordem permanecem desativados e parecem
+   desativados. As regras de bloqueio do ES e de simulação são as da base.
+
+Para repetir a prova isolada sem tocar no coletor, siga browser/COMO-REPETIR.txt.
+O diretório browser/ contém somente ferramentas/evidências de teste; ele não
+integra o index.html e não deve ser incorporado ao coletor.
+
+FONTES DOS CABEÇALHOS SEC-FETCH-*
+
+O navegador gera esses cabeçalhos; o JavaScript não os define manualmente.
+O fetch relativo usa no-store, credentials omit, referrerPolicy no-referrer,
+redirect error e signal para cancelamento. No servidor falso, foram observados
+same-origin / cors / empty, sem Cookie ou Referer.
+
+W3C, Fetch Metadata Request Headers, seções 2 e 3:
+https://w3c.github.io/webappsec-fetch-metadata/
+
+MDN, Sec-Fetch-Site, exemplo de fetch na mesma origem com os três cabeçalhos:
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Site

@@ -1,0 +1,11 @@
+[Unit]
+Description=QHOS V2 confere todo dia, antes da abertura, que os servicos de captura estao ligados
+
+[Timer]
+# 07:30 de NY, todo dia (fim de semana tambem): antes da janela (09:00); cobre o fim do processo do tmux em 25/11,
+# qualquer saida inesperada e a abertura da pasta selada no sabado 21/11.
+OnCalendar=*-*-* 07:30:00 America/New_York
+Persistent=true
+
+[Install]
+WantedBy=timers.target

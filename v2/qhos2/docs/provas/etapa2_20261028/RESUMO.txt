@@ -1,0 +1,14 @@
+inicio_utc=2026-10-28T19:48:29Z versao=0.2.5 release="commit":"57388f325a6fdfa91741171846db90be8b1ce116"
+captura=01f4476a1e4b4fbfbd855de7e9be4bff livro_rc=2 inspecao_rc=2 segundos=0
+captura=151c0ebaa9f44ea7b6a7f8b3e47511bf livro_rc=0 inspecao_rc=0 segundos=0
+captura=798f765eb56b4578bd0c95d7ecd19ae0 livro_rc=0 inspecao_rc=0 segundos=3
+captura=7fc5b0b80fb749f7821360f2c5c38740 livro_rc=0 inspecao_rc=0 segundos=0
+captura=88e31bf59e1a4625a8298fea2576294a livro_rc=0 inspecao_rc=0 segundos=240
+captura=8aa43f0abe9647a29354c81058157652 livro_rc=0 inspecao_rc=0 segundos=3
+captura=c4ff575effd849aa84736bd8914b8ddb livro_rc=0 inspecao_rc=0 segundos=1
+captura=d82fc10443e34b96b927ce63553b01bc livro_rc=0 inspecao_rc=0 segundos=1
+captura=de39279bbcf643028ffd347eaffd896a livro_rc=0 inspecao_rc=0 segundos=244
+captura=e694658715f64e10908897d8407b740b livro_rc=0 inspecao_rc=0 segundos=1
+captura=ee507157686748ff9333cd00a5505ea7 livro_rc=0 inspecao_rc=0 segundos=0
+fim_utc=2026-10-28T19:56:42Z
+pronto: /home/usuario/qhos-v2-data/derivados/etapa2_20261028T194829Z

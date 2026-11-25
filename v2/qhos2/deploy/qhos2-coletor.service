@@ -1,0 +1,29 @@
+[Unit]
+Description=QHOS V2 terminal e leitor de capturas
+After=network.target
+StartLimitIntervalSec=60
+StartLimitBurst=3
+
+[Service]
+Type=simple
+WorkingDirectory=%h/qhos-v2
+Environment=QHOS2_DATA_ROOT=%h/qhos-v2-data
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=%h/qhos-v2/.venv/bin/python -m qhos2.supervisao_coletor --raiz %h/qhos-v2-data
+KillMode=control-group
+TimeoutStopSec=20
+Restart=on-failure
+RestartSec=5
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=%h/qhos-v2-data %h/.config/qhos2
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+MemoryMax=1G
+TasksMax=64
+
+[Install]
+WantedBy=default.target

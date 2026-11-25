@@ -1,0 +1,5 @@
+captura=88e31bf59e1a4625a8298fea2576294a fase=PRONTO qualificado=True suspeito=False cruzado=False
+  eventos=4980578 negocios=436751 ordens=13279 niveis={'C': 646, 'V': 621} spread_ticks=1
+  anomalias={'cruzado': 46, 'cruzado_dentro_do_quadro': 5441, 'durante_retrato_altera_desconhecida': 2, 'durante_retrato_novo_ja_vivo': 13, 'durante_retrato_remove_desconhecida': 8}
+  reaplicadas={'aplicadas': 27, 'defasadas': 0, 'fantasmas': 0}
+  assinatura=59cb5c0c3ce9bb78

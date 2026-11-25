@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#030806">
+  <title>BRAIN — Centro de comando</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='12' fill='%23030806'/%3E%3Cpath d='M22 10C10 6 5 22 12 27c-3 9 4 15 10 10M26 10c12-4 17 12 10 17 3 9-4 15-10 10M22 10v28m4-28v28M12 18l10 5m14-5-10 5M12 29l10 1m14-1-10 1' stroke='%2365ffab' fill='none' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/rithmic-observation.css">
+  <script src="/rithmic-observation.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-brain" viewBox="0 0 24 24"><path d="M10 4C4 2 1 9 5 12c-3 5 1 9 5 7M14 4c6-2 9 5 5 8 3 5-1 9-5 7M10 4v16m4-16v16M5 9l5 3m9-3-5 3M5 16h5m9 0h-5"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h.01M7 17.5h.01M11 6.5h6M11 17.5h6"/></symbol>
+    <symbol id="i-test" viewBox="0 0 24 24"><path d="M8 3h8M10 3v6l-6 9a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-6-9V3M7 15h10M10 18h4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 2 9 4v6c0 6-9 10-9 10S3 18 3 12V6l9-4Z"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M2 12h5l3-8 4 16 3-8h5"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7a9 9 0 1 0 1 8M20 3v5h-5"/></symbol>
+    <symbol id="i-power" viewBox="0 0 24 24"><path d="M12 2v10M6 5a9 9 0 1 0 12 0"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="m4 4 17 8-17 8 3-8-3-8Zm3 8h14"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="13" rx="4"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3m-4 0h8"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="M3 9h4l5-5v16l-5-5H3V9Zm13-1a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m7 4 14 8-14 8V4Z"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/></symbol>
+  </defs></svg>
+
+  <aside class="rail" aria-label="Navegação principal">
+    <a class="brand-mark" href="/" aria-label="Brain início"><svg><use href="#i-brain"/></svg></a>
+    <div class="rail-links">
+      <button class="rail-link active" data-view="overview" title="Centro de comando" aria-label="Centro de comando" aria-pressed="true"><svg><use href="#i-grid"/></svg><span>CORE</span></button>
+      <button class="rail-link" data-view="server" title="Servidor Trader" aria-label="Servidor Trader" aria-pressed="false"><svg><use href="#i-server"/></svg><span>HOST</span></button>
+      <button class="rail-link" data-view="cognition" id="intelligence-button" title="Inteligência e evidências" aria-label="Inteligência e evidências" aria-pressed="false"><svg><use href="#i-brain"/></svg><span>MIND</span></button>
+      <button class="rail-link" data-view="tester" title="Laboratório de testes" aria-label="Laboratório de testes" aria-pressed="false"><svg><use href="#i-test"/></svg><span>TEST</span></button>
+      <button class="rail-link" data-view="incidents" title="Incidentes e proteção" aria-label="Incidentes e proteção" aria-pressed="false"><svg><use href="#i-shield"/></svg><span>GUARD</span></button>
+      <button class="rail-link" data-view="linux" id="linux-button" title="Ações do serviço Linux" aria-label="Ações do serviço Linux" aria-pressed="false"><svg><use href="#i-pulse"/></svg><span>LINUX</span></button>
+    </div>
+    <button class="rail-link rail-bottom" id="help-button" title="Como usar o Brain" aria-label="Como usar o Brain"><span class="help-glyph">?</span><span>GUIA</span></button>
+    <span class="rail-version">B / 01</span>
+  </aside>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="wordmark">BRAIN<span class="wordmark-dot">.</span><span class="wordmark-caption">INTELLIGENCE<br>OPERATING SYSTEM</span></div>
+      <div class="top-status"><span class="status-led" id="connection-led"></span><span id="connection-label">Conectando ao núcleo</span></div>
+      <div class="topbar-end"><span class="clock" id="clock">--:--:--</span><button class="icon-button" id="refresh-button" title="Atualizar telemetria" aria-label="Atualizar telemetria"><svg><use href="#i-refresh"/></svg></button><div class="avatar" title="Seu assistente pessoal">N</div></div>
+    </header>
+
+    <main class="workspace">
+      <section class="command-column" aria-label="Centro de comando Brain">
+        <div id="brain-view">
+        <div class="page-heading"><div><p class="eyebrow"><span></span> CENTRO DE COMANDO</p><h1>Um cérebro. Todo o controle.</h1><p class="page-subtitle">Seu assistente pessoal, conectado ao universo Trader.</p></div><div class="heading-actions"><button class="button subdued" id="run-tests"><svg><use href="#i-test"/></svg>Verificações rápidas</button><button class="button primary" id="restart-button"><svg><use href="#i-power"/></svg>Religar Trader</button></div></div>
+
+        <div class="metrics" aria-label="Telemetria atual">
+          <button class="metric" data-pick="brain"><span class="metric-title">NÚCLEO BRAIN<svg><use href="#i-arrow"/></svg></span><strong id="brain-status">—</strong><span class="metric-detail" id="brain-detail">Aguardando telemetria</span><span class="metric-bar"><i id="brain-bar"></i></span></button>
+          <button class="metric" data-pick="trader"><span class="metric-title">SERVIDOR TRADER<svg><use href="#i-arrow"/></svg></span><strong id="trader-status">—</strong><span class="metric-detail" id="trader-detail">Verificando conexão</span><span class="metric-bar"><i id="trader-bar"></i></span></button>
+          <button class="metric" data-pick="tester"><span class="metric-title">VERIFICAÇÕES RÁPIDAS<svg><use href="#i-arrow"/></svg></span><strong id="tester-status">—</strong><span class="metric-detail" id="tester-detail">Diagnóstico operacional</span><span class="metric-bar"><i id="tester-bar"></i></span></button>
+          <button class="metric" data-pick="watchdog"><span class="metric-title">AUTORRECUPERAÇÃO<svg><use href="#i-arrow"/></svg></span><strong id="watchdog-status">—</strong><span class="metric-detail" id="watchdog-detail">Consultando supervisão</span><span class="metric-bar"><i id="watchdog-bar"></i></span></button>
+        </div>
+
+        <section class="detail-panel" style="margin:0 0 19px" aria-label="Regressão operacional e auditoria ampla, escopos separados">
+          <button class="event-row" id="regression-button" title="Ver regressão operacional e verificação das evidências">
+            <svg><use href="#i-test"/></svg><span class="event-copy"><strong id="regression-title">Regressão operacional · 1 hora</strong><span id="regression-summary" style="display:block;font-size:10px;margin-top:5px;color:var(--muted)">Aguardando estado · separada das verificações rápidas e da auditoria ampla</span></span><span class="event-time" id="regression-next">SEM LEITURA</span><span class="event-arrow">↗</span>
+          </button>
+          <button class="event-row" id="audit-button" title="Ver evidências da auditoria ampla">
+            <svg><use href="#i-shield"/></svg><span class="event-copy"><strong>Auditoria ampla de regressão</strong><span id="audit-summary" style="display:block;font-size:10px;margin-top:5px;color:var(--muted)">Aguardando relatório externo · não executada pelos checks rápidos</span></span><span class="event-time" id="audit-age">SEM LEITURA</span><span class="event-arrow">↗</span>
+          </button>
+        </section>
+
+        <section class="core-panel" id="core-panel" aria-label="Visualização interativa do cérebro">
+          <div class="panel-heading"><div><span class="eyebrow">NEURAL INTERFACE</span><h2 id="core-heading">Centro cognitivo</h2></div><div class="segmented" role="group" aria-label="Modo de visualização"><button data-mode="neural" class="selected" aria-pressed="true">Neural</button><button data-mode="orbital" aria-pressed="false">Orbital</button></div></div>
+          <div class="brain-stage" id="brain-stage">
+            <canvas id="brain-canvas" aria-label="Cérebro animado. Arraste para girar e use os botões dos sistemas para inspecionar dados." role="img"></canvas>
+            <div class="stage-coordinate coordinate-top">BRAIN / NEURAL TOPOLOGY</div><div class="stage-coordinate coordinate-bottom" id="scene-caption">ROTAÇÃO AMBIENTE · FLUXOS SOMENTE COM ATIVIDADE OBSERVADA</div>
+            <div class="stage-crosshair crosshair-tl"></div><div class="stage-crosshair crosshair-tr"></div><div class="stage-crosshair crosshair-bl"></div><div class="stage-crosshair crosshair-br"></div>
+            <div class="core-readout"><span class="core-readout-label" id="core-state">AGUARDANDO SINAL</span><span class="core-readout-caption" id="core-state-detail">Interface cognitiva do Trader</span></div>
+            <button id="rithmic-entry" class="rithmic-entry" type="button"><i aria-hidden="true"></i><b>RITHMIC</b><small id="rithmic-entry-state">Indisponível</small></button>
+            <div class="node-map" id="node-map" aria-label="Sistemas conectados">
+              <button class="system-node node-brain" data-pick="brain"><i></i><span><b>COGNIÇÃO</b><small id="node-brain-status">Aguardando</small></span></button>
+              <button class="system-node node-trader" data-pick="trader"><i></i><span><b>TRADER</b><small id="node-trader-status">Aguardando</small></span></button>
+              <button class="system-node node-tester" data-pick="tester"><i></i><span><b>DIAGNÓSTICO</b><small id="node-tester-status">Aguardando</small></span></button>
+              <button class="system-node node-watchdog" data-pick="watchdog"><i></i><span><b>PROTEÇÃO</b><small id="node-watchdog-status">Aguardando</small></span></button>
+            </div>
+            <section class="immersive-layer" id="immersive-layer" aria-label="Navegação imersiva do Brain" hidden>
+              <div class="immersive-grid" aria-hidden="true"></div>
+              <header class="immersive-nav">
+                <button class="immersive-back" id="immersive-back" type="button"><span aria-hidden="true">←</span><span>VOLTAR AO NÚCLEO</span></button>
+                <span class="immersive-path" id="immersive-path">BRAIN / SISTEMA</span>
+                <button class="icon-button" id="immersive-voice-button" type="button" title="Comando por voz" aria-label="Comando por voz"><svg><use href="#i-mic"/></svg></button>
+              </header>
+              <div class="immersive-content" id="immersive-content"></div>
+              <div class="immersive-voice-status" id="voice-command-status">Diga “abrir diagnóstico”, “estado do Trader” ou faça uma pergunta.</div>
+            </section>
+            <div class="scene-tools"><button class="icon-button" id="motion-toggle" title="Pausar movimento ambiente" aria-label="Pausar movimento ambiente" aria-pressed="false"><svg><use href="#i-pause"/></svg></button><button class="icon-button" id="scene-voice-button" title="Comando por voz" aria-label="Comando por voz"><svg><use href="#i-mic"/></svg></button><button class="icon-button" id="reset-view" title="Centralizar cérebro" aria-label="Centralizar cérebro"><svg><use href="#i-refresh"/></svg></button><button class="icon-button" id="fullscreen-button" title="Expandir visualização" aria-label="Expandir visualização"><svg><use href="#i-expand"/></svg></button></div>
+          </div>
+            <div class="core-footer"><span class="pulse-dot"></span><span id="core-footer-status">Conectando à inteligência</span><span class="core-footer-hint">EXPANDA E SELECIONE UM NÓ <span>↗</span></span></div>
+          <section class="rithmic-observation" data-rithmic-observation data-product="brain" aria-label="Dados Rithmic recebidos pelo observador"></section>
+        </section>
+
+        <section id="qhos2-observation" class="detail-panel" aria-label="Dados observados da V2">
+          <div class="detail-header"><strong>QHOS V2 · dados observados</strong><a href="http://127.0.0.1:8766/" target="_blank" rel="noopener">Abrir terminal</a></div>
+          <p id="qhos2-observation-state">Aguardando leitura do coletor V2.</p>
+          <p id="qhos2-observation-detail">Sem confirmação de sessão ao vivo. Negociação desabilitada.</p>
+        </section>
+        <section class="detail-panel" id="detail-panel" aria-label="Inspeção dos sistemas">
+          <div class="detail-header"><div class="detail-tabs" style="overflow-x:auto;gap:18px;min-width:0" role="tablist" aria-label="Detalhes"><button role="tab" data-detail="activity" aria-selected="true" class="selected">Atividade</button><button role="tab" data-detail="cognition" aria-selected="false">Inteligência</button><button role="tab" data-detail="inspector" aria-selected="false">Inspetor<span id="inspector-badge">CORE</span></button><button role="tab" data-detail="tests" aria-selected="false">Rápidas<span id="test-count">—</span></button><button role="tab" data-detail="regression" aria-selected="false">Regressão</button><button role="tab" data-detail="incidents" aria-selected="false">Incidentes<span id="incident-count">—</span></button></div><span class="small-label" id="last-updated">SEM LEITURA</span></div>
+          <div id="detail-content" class="detail-content" role="tabpanel" tabindex="0"><div class="empty-state"><svg><use href="#i-pulse"/></svg><div><strong>Estabelecendo conexão</strong><p>Os eventos reais do Brain aparecerão aqui.</p></div></div></div>
+        </section>
+        </div>
+
+        <section class="linux-view" id="linux-view" aria-label="Ações do serviço Linux" hidden>
+          <header class="linux-heading">
+            <div><p class="eyebrow"><span></span> LINUX / SERVIÇO</p><h1>Registro operacional.</h1><p>Eventos estruturados do <code>qhos2-brain.service</code>. Somente leitura; não é um terminal nem o journal bruto.</p></div>
+            <button class="button subdued" id="linux-refresh" type="button"><svg><use href="#i-refresh"/></svg>Atualizar log</button>
+          </header>
+          <div class="linux-runtime-strip">
+            <div><span>SERVIÇO</span><strong id="linux-service">qhos2-brain.service</strong></div>
+            <div><span>PROCESSO</span><strong id="linux-pid">—</strong></div>
+            <div><span>ESTADO</span><strong id="linux-state">AGUARDANDO</strong></div>
+            <div><span>CÓDIGO CARREGADO</span><strong id="linux-code-state">—</strong></div>
+          </div>
+          <div class="linux-log-shell">
+            <div class="linux-log-bar"><span><i></i><i></i><i></i></span><strong>LINUX ACTION STREAM</strong><small id="linux-log-count">0 EVENTOS</small></div>
+            <div class="linux-log" id="linux-log" role="log" aria-live="polite"><div class="linux-log-empty"><span>›</span> Aguardando leitura segura do serviço…</div></div>
+          </div>
+          <p class="linux-boundary">Este histórico registra ações do processo Brain no Linux. Saúde do serviço, integridade de pesquisa e autorização de execução continuam sendo estados separados.</p>
+        </section>
+      </section>
+
+      <aside class="assistant-panel" aria-label="Assistente Jarvis">
+        <div class="assistant-heading"><div class="assistant-symbol"><svg><use href="#i-brain"/></svg></div><div><h2>JARVIS<span>by Brain</span></h2><p id="assistant-presence">Seu copiloto pessoal</p></div><button class="icon-button" id="sound-button" aria-label="Ativar leitura em voz alta" title="Ativar leitura em voz alta" aria-pressed="false"><svg><use href="#i-sound"/></svg></button></div>
+        <div class="assistant-context"><span class="context-dot"></span><span>AUDITORIA · PESQUISA · MEMÓRIA</span><button id="target-button" title="Inspecionar pasta de trabalho">TRADER <svg><use href="#i-arrow"/></svg></button></div>
+        <div class="chat-messages" id="chat-messages" role="log" aria-live="polite" aria-relevant="additions">
+          <div class="chat-welcome"><div class="welcome-orb"><span></span><svg><use href="#i-brain"/></svg></div><p class="eyebrow">INTELIGÊNCIA A SEU SERVIÇO</p><h3>Seu servidor.<br>Seu dia. Seu Jarvis.</h3><p>Minha especialidade é auditar o servidor, investigar bugs e preservar estratégias com evidências. Também pesquiso seus pedidos com fontes e ajudo no seu dia a dia.</p></div>
+          <div class="suggestions" id="suggestions"><button data-prompt="Me ajude a organizar as prioridades do meu dia. Por onde começamos?"><svg><use href="#i-test"/></svg><span>Organizar meu dia</span><span>↗</span></button><button data-prompt="Quero pesquisar um assunto na internet. Pode me ajudar?"><svg><use href="#i-arrow"/></svg><span>Pesquisar na internet</span><span>↗</span></button><button data-prompt="Como está o servidor Trader agora?"><svg><use href="#i-server"/></svg><span>Consultar o Brain</span><span>↗</span></button></div>
+        </div>
+        <div class="chat-bottom"><div class="chat-working" id="chat-working" hidden><i></i><i></i><i></i><span>Jarvis está preparando sua resposta…</span></div><form class="chat-composer" id="chat-form"><label class="sr-only qhos-sr-only" for="chat-input">Mensagem para o Jarvis</label><textarea id="chat-input" placeholder="O que vamos resolver hoje?" rows="2" maxlength="4000"></textarea><div class="composer-actions"><span>SEU ASSISTENTE PESSOAL</span><button type="button" class="icon-button" id="mic-button" title="Comando por voz" aria-label="Comando por voz"><svg><use href="#i-mic"/></svg></button><button class="send-button" id="send-button" type="submit" aria-label="Enviar mensagem"><svg><use href="#i-send"/></svg></button></div></form><p class="chat-note" id="voice-note">Enter envia · Shift + Enter adiciona uma linha · converse também por voz</p></div>
+      </aside>
+    </main>
+    <footer class="app-footer"><span><i></i>BRAIN STANDALONE</span><span id="workspace-path">WORKSPACE / AGUARDANDO</span><span>LOCAL INTELLIGENCE</span></footer>
+  </div>
+  <div class="toast" id="toast" role="status" hidden></div>
+  <dialog id="action-dialog"><form method="dialog"><button class="dialog-close icon-button" value="cancel" aria-label="Fechar"><svg><use href="#i-close"/></svg></button><span class="eyebrow" id="dialog-kicker">BRAIN / CONTROLE</span><h2 id="dialog-title">Religar servidor</h2><p id="dialog-description"></p><div id="dialog-details"></div><div class="dialog-actions"><button class="button subdued" value="cancel" id="dialog-cancel">Voltar</button><button class="button primary" id="dialog-confirm" value="confirm">Religar Trader</button></div></form></dialog>
+</body>
+</html>

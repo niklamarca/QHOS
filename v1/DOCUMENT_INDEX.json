@@ -1,0 +1,26 @@
+{
+  "schema": "qhos_document_index_v1",
+  "authoritative_order": [
+    "data_lake/governance/CURRENT_STATE.json",
+    "governance/EPISTEMIC_CONTRACT.md",
+    "core/config.py",
+    "codigo_em_execucao"
+  ],
+  "documents": {
+    "ARCHITECTURE.md": "SUPERSEDED_REFERENCE",
+    "GUIA_OPERACIONAL.md": "HISTORICAL_GUIDE_NEEDS_REFRESH",
+    "ARQUITETURA_auditoria_marketOS.md": "HISTORICAL_AUDIT",
+    "AUDITORIA_REGRESSIVA_20260812.md": "HISTORICAL_AUDIT",
+    "ANALISE_SENIOR_vs_RenTec.md": "HISTORICAL_ANALYSIS",
+    "daily_report.md": "HISTORICAL_SNAPSHOT",
+    "CRITICA_arquitetura_comite.md": "DESIGN_CRITIQUE",
+    "COMPENDIO_formulas_e_execucao.md": "REFERENCE_NOT_IMPLEMENTATION",
+    "HIPOTESE_VRP_spec_falsificavel.md": "EXPERIMENT_SPEC",
+    "HIPOTESE_TREND_spec_falsificavel.md": "EXPERIMENT_SPEC",
+    "HIPOTESE_SYMB1_spec_falsificavel.md": "EXPERIMENT_SPEC",
+    "HIPOTESE_modulo_opcoes_greeks.md": "HYPOTHESIS_NOTE",
+    "data/EVENT_PLANE.md": "CURRENT_IMPLEMENTATION_GUIDE",
+    "DATABENTO_SETUP.bat": "CURRENT_ACTIVATION_ENTRYPOINT"
+  },
+  "rule": "Documento historico descreve o estado na data em que foi escrito e nunca vence CURRENT_STATE."
+}

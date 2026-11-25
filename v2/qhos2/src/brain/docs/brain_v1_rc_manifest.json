@@ -1,0 +1,197 @@
+{
+  "schema": "qhos-brain-rc-manifest-v1",
+  "architecture_version": 1,
+  "release_channel": "LEVEL2_SHADOW_RC",
+  "freeze_date": "2026-09-03",
+  "identity_hash": "9c00d86516bc0143",
+  "repo_sha": "5ec6e2e4d4d4",
+  "schemas": {
+    "brain_snapshot": "qhos-brain-v1",
+    "lacos_contract": "qhos-brain-lacos-v1",
+    "cognitive": "qhos-brain-cognitive-v1",
+    "shadow": "qhos-brain-shadow-v1",
+    "intelligence": "qhos-brain-intelligence-v1",
+    "pending_model": "qhos-pending-model-v1",
+    "runtime_attestation": "qhos-runtime-attestation-v1",
+    "route": "qhos-brain-v1",
+    "soak_session": "qhos-brain-soak-v1",
+    "replay": "qhos-brain-replay-v1",
+    "review": "qhos-brain-review-v1",
+    "telemetry_ledger": "qhos-telemetry-ledger-v1",
+    "fault_matrix": "qhos-fault-matrix-v1",
+    "observation": "qhos-observation-v2",
+    "replay_contract": "qhos-replay-contract-v1",
+    "score": "discovery-score-v2",
+    "fingerprint": "rootfp-v1",
+    "view_model": "qhos-brain-view-v1",
+    "event_stream": "qhos-brain-events-v1",
+    "defect_ledger": "qhos-measurement-defects-v1",
+    "provenance": "qhos-evaluation-provenance-v1"
+  },
+  "discovery_policy": {
+    "active": "DISCOVERY_POLICY_G1",
+    "revision": "g1",
+    "config_hash": "9ec484d3b7ef36a9",
+    "scoring_hash": "04f2ec81fc26e408",
+    "frozen": true,
+    "proposed_not_active": [
+      "DISCOVERY_POLICY_G1.1"
+    ]
+  },
+  "features": {
+    "CONTINUOUS_LIVE_LLM": "DISABLED",
+    "DETERMINISTIC_DISCOVERY": "ACTIVE",
+    "FABLE_DERIVED": "EXPERIMENTAL",
+    "LEGACY_SHADOW_CANDIDATES": "DEPRECATED",
+    "LEVEL3_SANDBOX": "CAPABLE_NOT_ENABLED",
+    "LIVE_SHADOW_SOAK": "AVAILABLE_OPT_IN",
+    "REAL_HYBRID": "AVAILABLE_OPT_IN",
+    "RUNTIME_ATTESTATION": "ACTIVE"
+  },
+  "default_strategy": "deterministic",
+  "available_strategies": [
+    "deterministic",
+    "real_hybrid",
+    "fable_derived"
+  ],
+  "authority": {
+    "level": 2,
+    "level_name": "INVESTIGATE",
+    "recommendation_is_not_authorization": true,
+    "can_read": [
+      "process and host resource telemetry",
+      "component registry and health",
+      "log tails and error tails",
+      "git worktree and running-process revision (attestation)",
+      "its own memory, audit and evaluation artifacts",
+      "queue depth and stream lag counters"
+    ],
+    "can_recommend": [
+      "potential incidents with a root candidate and evidence",
+      "improvement candidates",
+      "read-only verification requests",
+      "telemetry quality issues and observability improvements",
+      "threshold calibration proposals (never self-applied)"
+    ],
+    "can_execute_in_test": [
+      "deterministic replay of a persisted observation stream",
+      "controlled fault injection against in-memory dev snapshots",
+      "read-only verification actions from an allowlist"
+    ],
+    "can_execute_in_sandbox": [
+      "nothing at Level 2 — sandbox is capable but hardcoded off"
+    ],
+    "never_at_level_2": [
+      "apply a code change",
+      "open or merge a pull request, or push",
+      "deploy or restart production",
+      "submit, modify or cancel an order",
+      "change risk limits or kill-switch state",
+      "mutate OMS or broker state",
+      "change its own autonomy level",
+      "enable the sandbox or Level 3",
+      "call a paid model without an explicit per-run gate",
+      "write production configuration or credentials"
+    ]
+  },
+  "sandbox_enabled": false,
+  "level3_enabled": false,
+  "continuous_live_llm": false,
+  "paid_calls_require_explicit_gate": true,
+  "non_goals": [
+    "automatic remediation",
+    "production autonomy",
+    "a guaranteed false-negative rate",
+    "universal LLM superiority over deterministic analysis",
+    "Fable superiority",
+    "continuous remote cognition",
+    "self-modification"
+  ],
+  "test_baseline": {
+    "global_command": "py -3.13 -m pytest tests/ -q -p no:randomly --continue-on-collection-errors",
+    "brain_command": "py -3.13 -m pytest tests/test_brain*.py -q -p no:randomly",
+    "brain_selector_rule": "every file matching tests/test_brain*.py; no hand-maintained list",
+    "python": "3.13.14",
+    "pytest": "9.1.0",
+    "global_passed": 714,
+    "global_failed": 14,
+    "collection_errors": 6,
+    "brain_passed": 567,
+    "brain_failed": 0,
+    "reproduced_runs": 3,
+    "repo_sha_at_baseline": "5ec6e2e4d4d4",
+    "known_error_files": [
+      "tests/test_crypto_schedule.py",
+      "tests/test_desktop_spawn.py",
+      "tests/test_gpu_stats_no_console.py",
+      "tests/test_integrity_regressions.py",
+      "tests/test_market_clock.py",
+      "tests/test_orchestra.py"
+    ],
+    "known_failure_files": [
+      "tests/test_crypto_refresh.py",
+      "tests/test_edge_birth_panel.py",
+      "tests/test_edge_gate.py",
+      "tests/test_search_persistence.py"
+    ],
+    "new_regressions": 0,
+    "legacy_keyword_selector_now": {
+      "command": "pytest tests/ -k 'brain or discovery or attest or soak or replay or shadow or cognitive or fable or committee or sandbox or control_plane or language or proving or calibration or fault or provider or hybrid'",
+      "passed": 613,
+      "note": "Not the RC selector. Shown only to explain why earlier phases reported 553."
+    }
+  },
+  "strategies": {
+    "default": "deterministic",
+    "available": [
+      "current_hybrid",
+      "deterministic",
+      "fable_derived",
+      "real_hybrid"
+    ],
+    "detail": {
+      "current_hybrid": "AVAILABLE_OPT_IN",
+      "deterministic": "ACTIVE",
+      "fable_derived": "EXPERIMENTAL",
+      "real_hybrid": "AVAILABLE_OPT_IN"
+    }
+  },
+  "safe_default_audit": {
+    "schema": "qhos-brain-config-v1",
+    "flags_declared": 37,
+    "unsafe": [],
+    "undeclared_in_config": [],
+    "invariants": {
+      "deterministic_mode": true,
+      "paid_calls_off": true,
+      "explicit_eval_off": true,
+      "paid_replay_off": true,
+      "live_llm_shadow_off": true,
+      "soak_off": true,
+      "autonomy_at_most_2": true,
+      "sandbox_off": true,
+      "fable_not_default": true
+    },
+    "ok": true
+  },
+  "measurement_defects": {
+    "total": 9,
+    "open": 1,
+    "fixed_forward": 8,
+    "ids": [
+      "MD-01",
+      "MD-02",
+      "MD-03",
+      "MD-04",
+      "MD-05",
+      "MD-06",
+      "MD-07",
+      "MD-08",
+      "MD-09"
+    ]
+  },
+  "replay_fidelity": {
+    "controlled_artifacts": 1.0,
+    "historical_sessions": "replay_faithful=false, not re-scored"
+  }
+}
