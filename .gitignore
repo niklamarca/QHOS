@@ -18,3 +18,10 @@ logs/
 *.dbn.zst
 *.pt
 vendor/
+
+# test and coverage output
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.pytest_cache/

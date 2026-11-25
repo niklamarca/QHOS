@@ -1,0 +1,12 @@
+# Minimal set to run v1/tests on CI (no GPU, no broker SDKs). Versions are the ones the suite was verified with.
+numpy==2.5.5
+pandas==3.1.1
+scipy==1.18.1
+pydantic==2.14.4
+pydantic-settings==2.16.3
+loguru==0.8.0
+duckdb==2.0.1
+pyarrow==26.0.1
+anthropic==2.14.0
+pytest==9.2.0
+pytest-cov==7.1.0
