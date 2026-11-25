@@ -6,6 +6,13 @@ My personal trading system, written in Python. It started as a research platform
 
 It's a personal project. Nothing here trades real money and none of it is financial advice.
 
+### Where to look if you're reviewing my testing
+
+- [`v1/tests/test_risk_engine.py`](v1/tests/test_risk_engine.py): boundary values for drawdown and daily-loss limits, and how breaches escalate to the kill switch
+- [`v1/tests/test_paper_broker.py`](v1/tests/test_paper_broker.py): fills, costs and restart persistence, with a regression test for a bug the suite found and I fixed
+- [`v1/tests/test_hrp.py`](v1/tests/test_hrp.py): portfolio weights checked across seeds, plus two known bugs kept visible as strict `xfail`
+- [CI runs](https://github.com/niklamarca/QHOS/actions/workflows/tests.yml): both suites, with coverage, on every push
+
 ## v1 (`v1/`)
 
 The first version, a research setup:
